@@ -11,12 +11,12 @@ export default function SideNav({ children }: { children: React.ReactNode }) {
   const pathName = usePathname();
 
   return (
-    <section className="flex w-full justify-between items-center px-4 pt-16">
+    <section className="flex w-full justify-between px-2 pt-20">
       <div className="flex flex-col gap-4">
         {SIDENAV_ITEMS.map(({ link, icon }, index: number) => {
           return (
             <Link key={index} href={link} className="text-primary ">
-              <Image src={icon} alt="icon" width={25} height={25} />
+              <Image src={icon} alt="icon" width={20} height={20} />
             </Link>
           );
         })}
