@@ -21,7 +21,7 @@ export default function NavBar({ isOpenMenu, setIsOpenMenu }: NavBarTypes) {
     <main className="w-full">
       {/* mobile */}
       <div
-        className={`bg-background absolute h-[100vh] z-10 top-0 right-0 left-0 ${
+        className={`bg-background fixed min-h-[100vh] z-10 top-0 right-0 left-0 ${
           isOpenMenu ? "block" : "hidden"
         }`}
       >
