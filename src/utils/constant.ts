@@ -17,10 +17,5 @@ export const SKILLS_ITEM = [
   { skill: "Typescript", icon: "/typescript.svg", bgColor: "" },
   { skill: "Reactjs", icon: "/reactjs.svg", bgColor: "" },
   { skill: "Nextjs", icon: "/nextjs.svg", bgColor: "" },
-  { skill: "Golang", icon: "/golang.svg", bgColor: "" },
-  { skill: "Git and Github", icon: "/git.svg", bgColor: "" },
-  { skill: "Firebase", icon: "/firebase.svg", bgColor: "" },
-  { skill: "MongoDb", icon: "/mongo.svg", bgColor: "" },
   { skill: "Tailwind css", icon: "/tailwindcss.svg", bgColor: "" },
-  { skill: "SQL", icon: "/sql.svg", bgColor: "" },
 ];
