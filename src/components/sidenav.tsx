@@ -11,7 +11,7 @@ export default function SideNav({ children }: { children: React.ReactNode }) {
   const pathName = usePathname();
 
   return (
-    <section className="flex w-full justify-between px-2 pt-20">
+    <section className="flex w-full justify-between">
       <div className="flex flex-col gap-4">
         {SIDENAV_ITEMS.map(({ link, icon }, index: number) => {
           return (
