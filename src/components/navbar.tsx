@@ -29,7 +29,7 @@ export default function NavBar({ isOpenMenu, setIsOpenMenu }: NavBarTypes) {
           <Logo />
           <RiCloseLine size={25} onClick={() => setIsOpenMenu(false)} />
         </div>
-        <div className="flex flex-col justify-center items-center gap-8 pt-16">
+        <div className="flex flex-col justify-center items-center gap-8 pt-12">
           <div className="text-center space-y-8 font-medium">
             {NAVBAR_ITEMS.map(({ value, route }, index: number) => {
               const isActive = pathName.endsWith(route);
