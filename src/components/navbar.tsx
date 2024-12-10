@@ -21,7 +21,7 @@ export default function NavBar({ isOpenMenu, setIsOpenMenu }: NavBarTypes) {
     <main className="w-full">
       {/* mobile */}
       <div
-        className={`bg-background absolute h-[100vh] z-10 top-0 bottom-0 right-0 left-0 ${
+        className={`bg-background absolute h-[100vh] z-10 top-0 right-0 left-0 ${
           isOpenMenu ? "block" : "hidden"
         }`}
       >
@@ -29,7 +29,7 @@ export default function NavBar({ isOpenMenu, setIsOpenMenu }: NavBarTypes) {
           <Logo />
           <RiCloseLine size={25} onClick={() => setIsOpenMenu(false)} />
         </div>
-        <div className="flex flex-col justify-center items-center gap-8 pt-12">
+        <div className="flex flex-col justify-center items-center gap-8 pt-8">
           <div className="text-center space-y-8 font-medium">
             {NAVBAR_ITEMS.map(({ value, route }, index: number) => {
               const isActive = pathName.endsWith(route);
