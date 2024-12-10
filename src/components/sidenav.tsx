@@ -9,6 +9,7 @@ import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 export default function SideNav({ children }: { children: React.ReactNode }) {
   const { back, forward } = useRouter();
   const pathName = usePathname();
+  
 
   return (
     <section className="flex w-full justify-between">

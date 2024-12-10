@@ -6,11 +6,10 @@ export const NAVBAR_ITEMS = [
   { value: "Contact", route: "/contact" },
 ];
 
-export const SIDENAV_ITEMS = [
+export const SOCIALS = [
   { link: "https://github.com/Akeemkabiru", icon: "/github.svg" },
   { link: "https://www.linkedin.com/in/akeemkabiru", icon: "/linkedin.svg" },
   { link: "https://x.com/kabby_10", icon: "/x.svg" },
-  { link: "https://wa.link/dxnf1j", icon: "/whatsapp.svg" },
 ];
 
 export const SKILLS_ITEM = [
