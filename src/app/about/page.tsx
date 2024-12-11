@@ -4,13 +4,20 @@ import React from "react";
 export default function page() {
   return (
     <main>
-      <section className="text-sm items-center gap-8 flex flex-col-reverse">
-        <div className=" space-y-2 text-center">
-          <h2 className="text-3xl font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 bg-clip-text text-transparent">
-            About me
-          </h2>
+      <section className="grid grid-cols-1 gap-6">
+        <div className="flex items-center justify-center">
+          <Image
+            src="/me.jpg"
+            alt="img"
+            width={200}
+            height={1}
+            className="rounded-lg"
+          />
+        </div>
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-primary mb-2">About me</h2>
 
-          <p>
+          <p className="text-sm">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
             assumenda incidunt at quibusdam voluptatibus sit accusantium,
             dolores excepturi id veritatis accusamus aspernatur. Odit sunt
@@ -24,14 +31,6 @@ export default function page() {
             voluptatibus ut vero! Sunt, pariatur aliquid?
           </p>
         </div>
-
-        <Image
-          src="/me.jpg"
-          alt="img"
-          width={200}
-          height={150}
-          className="rounded-lg"
-        />
       </section>
     </main>
   );

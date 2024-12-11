@@ -4,12 +4,12 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="w-full space-y-8">
-      <div className="space-y-6">
+    <main className="w-full space-y-12">
+      <div className="space-y-4">
         <h2 className="text-primary text-xl">Hi, my name is</h2>
         <h2 className="font-semibold text-6xl">Kabby</h2>
-        <h1 className="font-semibold text-3xl">Software Engineer</h1>
-        <p>
+        <h1 className="font-medium text-3xl">Software Engineer</h1>
+        <p className="text-sm">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum ullam
           incidunt quisquam, nisi laboriosam cupiditate culpa, similique impedit
           atque tenetur totam rem fugit debitis natus inventore molestias

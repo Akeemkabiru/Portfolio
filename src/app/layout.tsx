@@ -28,10 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased space-y-16`}
       >
         <Header />
-        <main className="px-6 py-8 mt-20 text-sm">{children}</main>
+        <main className="px-6 pt-16">{children}</main>
         <Footer />
       </body>
     </html>
