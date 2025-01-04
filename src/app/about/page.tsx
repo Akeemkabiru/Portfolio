@@ -19,15 +19,8 @@ export default function page() {
 
           <p className="text-sm">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
-            assumenda incidunt at quibusdam voluptatibus sit accusantium,
-            dolores excepturi id veritatis accusamus aspernatur. Odit sunt
-            distinctio optio earum ut? Ratione, optio. Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Illo odit explicabo optio vitae,
-            autem quo architecto fugit aut totam doloremque corporis deleniti
-            adipisci, ut impedit ipsa accusantium, saepe aperiam magnam? Lorem
-            ipsum dolor sit, amet consectetur adipisicing elit. Doloribus
-            dolores dignissimos voluptas aperiam assumenda fuga! Vitae
-            blanditiis nostrum similique cum voluptates ex! Explicabo et
+            assumenda . Lorem ipsum dolor sit
+            abo et
             voluptatibus ut vero! Sunt, pariatur aliquid?
           </p>
         </div>
