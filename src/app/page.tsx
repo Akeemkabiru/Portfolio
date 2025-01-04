@@ -10,9 +10,7 @@ export default function Home() {
         <h2 className="font-semibold text-6xl">Kabby</h2>
         <h1 className="font-medium text-3xl">Software Engineer</h1>
         <p className="text-sm">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum ullam
-          incidunt quisquam, nisi laboriosam cupiditate culpa, similique impedit
-          atque tenetur totam rem fugit debitis natus inventore molestias
+           fugit debitis natus inventore molestias
           tempora magni. Sunt.
         </p>
       </div>
