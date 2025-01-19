@@ -11,8 +11,8 @@ export default function Header() {
   return (
     <header className="flex items-center justify-center">
       {/* mobile */}
-      <div className="flex justify-between items-center w-[90%] backdrop-blur-sm bg-white/20  p-4 shadow-md fixed rounded-[20px] top-4">
-        <Image src="/logo.png" alt="logo" width={50} height={50} />
+      <div className="flex justify-between items-center w-[90%] backdrop-blur-sm bg-white/20  px-4 py-2 shadow-md fixed rounded-[20px] top-4">
+        <Image src="/logo.png" alt="logo" width={45} height={45} />
         <RiMenu3Line size={25} onClick={() => setIsOpenMenu(true)} />
       </div>
       {/* mobile nav */}
