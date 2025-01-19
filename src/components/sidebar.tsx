@@ -15,9 +15,7 @@ export default function SideBar() {
 
   return (
     <nav
-      className={`${
-        isOpenMenu ? "absolute" : "hidden"
-      } left-0 bg-black right-0 h-[100vh] top-0 transition-all duration-300`}
+      className={`  bg-black right-0 h-[100vh] top-0 transition-all duration-300`}
     >
       <div className="flex justify-between items-center px-8 py-4">
         <h2 className="text-2xl border font-bold rounded-md px-2">K</h2>
@@ -42,7 +40,6 @@ export default function SideBar() {
             </h3>
           );
         })}
-        
       </section>
     </nav>
   );
