@@ -1,7 +1,6 @@
 "use client";
 
 import { RiMenu3Line } from "react-icons/ri";
-import Logo from "./logo";
 import NavBar from "./navbar";
 import { useState } from "react";
 import Image from "next/image";
