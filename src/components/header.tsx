@@ -60,8 +60,12 @@ export default function Header() {
           })}
         </div>
         <div className="grid grid-cols-2 items-center gap-8">
-          {socialHandles.map(({ icon, href }) => {
-            return <Link href={href}>{icon}</Link>;
+          {socialHandles.map(({ icon, href }, index: number) => {
+            return (
+              <Link key={index} href={href}>
+                {icon}
+              </Link>
+            );
           })}
         </div>
       </div>
