@@ -7,6 +7,7 @@ import { NAVBAR_ITEMS } from "@/utils/constant";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { BsGithub, BsLinkedin, BsTwitterX, BsWhatsapp } from "react-icons/bs";
+import { ResumeBtn } from "./button";
 
 export default function Header() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -14,10 +15,10 @@ export default function Header() {
   const { push } = useRouter();
 
   const socialHandles = [
-    { icon: <BsLinkedin size={25} />, href: "" },
-    { icon: <BsGithub size={25} />, href: "" },
-    { icon: <BsWhatsapp size={25} />, href: "" },
-    { icon: <BsTwitterX size={25} />, href: "" },
+    { icon: <BsLinkedin size={22} />, href: "" },
+    { icon: <BsGithub size={22} />, href: "" },
+    { icon: <BsWhatsapp size={22} />, href: "" },
+    { icon: <BsTwitterX size={22} />, href: "" },
   ];
 
   const handleMenuSwitch = () => {
@@ -26,14 +27,43 @@ export default function Header() {
 
   return (
     <div className="fixed w-full top-4  flex  flex-col gap-4 items-center justify-center">
-      <div className="flex justify-between items-center w-[90%] backdrop-blur-sm bg-white/20  px-4 py-2 shadow-md  rounded-[20px] ">
+      <div className="flex justify-between items-center w-[90%] backdrop-blur-sm bg-white/20 md:px-4 md:py-3  px-4 py-2 shadow-md  rounded-[20px] md:rounded-[10px] ">
         <Image src="/logo.png" alt="logo" width={45} height={45} />
 
-        {isOpenMenu ? (
-          <RiCloseFill size={25} onClick={handleMenuSwitch} />
-        ) : (
-          <RiMenu3Line size={25} onClick={handleMenuSwitch} />
-        )}
+        <div className="md:flex hidden lg:gap-8 gap-4 items-center">
+          {NAVBAR_ITEMS.map(({ value, route }, index: number) => {
+            const isActive = pathName.endsWith(route);
+
+            return (
+              <Link
+                key={index}
+                href={route}
+                className={`cursor-pointer font-semibold ${
+                  isActive ? "text-primary" : "text-gray-500 "
+                }`}
+              >
+                {value}
+              </Link>
+            );
+          })}
+        </div>
+        <div className="md:flex gap-4 hidden">
+          {socialHandles.map(({ icon, href }, index: number) => {
+            return (
+              <Link key={index} href={href}>
+                {icon}
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="md:hidden block">
+          {isOpenMenu ? (
+            <RiCloseFill size={25} onClick={handleMenuSwitch} />
+          ) : (
+            <RiMenu3Line size={25} onClick={handleMenuSwitch} />
+          )}
+        </div>
       </div>
 
       <div
