@@ -1,32 +1,26 @@
-import Button from "@/components/button";
-import { SKILLS_ITEM } from "@/utils/constant";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="w-full space-y-12">
-      <div className="space-y-4">
-        <h2 className="text-primary text-xl">Hi, my name is</h2>
-        <h2 className="font-semibold text-6xl">Kabby</h2>
-        <h1 className="font-medium text-3xl">Software Engineer</h1>
-        <p className="text-sm">
-           fugit debitis natus inventore molestias
-          tempora magni. Sunt.
-        </p>
-      </div>
+    <main className="w-full">
+      <div className="lg:space-y-8 space-y-4 lg:w-[60%] w-full">
+        <div className="flex gap-2 items-center">
+          <p className="text-white/60 text-xl lg:text-3xl"> Hey, there </p>
+          <Image src="/hand-wave.svg" alt="hand" width={30} height={30} />
+        </div>
 
-      <div className="w-full justify-between grid grid-cols-5 gap-8">
-        {SKILLS_ITEM.map(({ skill, icon }, index: number) => {
-          return (
-            <div key={index} className="flex flex-col  items-center gap-4">
-              <Image src={icon} alt={skill} width={50} height={50} />
-            </div>
-          );
-        })}
-      </div>
-      <div className="flex items-center gap-8 justify-center">
-        <Button>Contact me</Button>
-        <Button>Projects</Button>
+        <h1 className="text-[32px]  md:text-5xl lg:text-6xl font-bold">
+          <p className="text-white/60 inline">I&apos;m </p>
+          <span className="bg-gradient-to-br bg-clip-text text-transparent from-[#7CC0C4] via-[#548FBA] to-[#3C84C7]">
+            Kabiru Akeem
+          </span>
+          <p>a Software Engineer</p>
+        </h1>
+
+        <p className="text-white/40 text-xl lg:text-3xl ">
+          Specialize in building intuitive, high-performance web and mobile
+          applications with modern frameworks.
+        </p>
       </div>
     </main>
   );
