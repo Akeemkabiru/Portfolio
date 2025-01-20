@@ -7,7 +7,6 @@ import { NAVBAR_ITEMS } from "@/utils/constant";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { BsGithub, BsLinkedin, BsTwitterX, BsWhatsapp } from "react-icons/bs";
-import { ResumeBtn } from "./button";
 
 export default function Header() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -15,10 +14,10 @@ export default function Header() {
   const { push } = useRouter();
 
   const socialHandles = [
-    { icon: <BsLinkedin size={22} />, href: "" },
-    { icon: <BsGithub size={22} />, href: "" },
-    { icon: <BsWhatsapp size={22} />, href: "" },
-    { icon: <BsTwitterX size={22} />, href: "" },
+    { icon: <BsLinkedin size={20} />, href: "" },
+    { icon: <BsGithub size={20} />, href: "" },
+    { icon: <BsWhatsapp size={20} />, href: "" },
+    { icon: <BsTwitterX size={20} />, href: "" },
   ];
 
   const handleMenuSwitch = () => {
@@ -27,7 +26,7 @@ export default function Header() {
 
   return (
     <div className="fixed w-full top-4  flex  flex-col gap-4 items-center justify-center">
-      <div className="flex justify-between items-center w-[90%] backdrop-blur-sm bg-white/20 md:px-4 md:py-3  px-4 py-2 shadow-md  rounded-[20px] md:rounded-[10px] ">
+      <div className="flex justify-between items-center px-6 py-4 rounded-2xl bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f]  std-backdrop-blur w-[90%]">
         <Image src="/logo.png" alt="logo" width={45} height={45} />
 
         <div className="md:flex hidden lg:gap-8 gap-4 items-center">
@@ -38,7 +37,7 @@ export default function Header() {
               <Link
                 key={index}
                 href={route}
-                className={`cursor-pointer font-semibold ${
+                className={`cursor-pointer font-medium ${
                   isActive ? "text-primary" : "text-gray-500 "
                 }`}
               >
@@ -67,7 +66,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`w-[90%] bg-white/30 rounded-[20px] backdrop-blur-md shadow-md transform transition-transform duration-500 ease-in-out flex justify-between items-center p-4 ${
+        className={`w-[90%] rounded-2xl bg-gradient-to-r from-[#d9d9d91f]  max-w-[90%] to-[#7373731f] backdrop-blur-md shadow-md transform transition-transform duration-500 ease-in-out flex justify-between std-backdrop-blur items-center p-4 ${
           isOpenMenu ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
         }`}
       >
