@@ -10,10 +10,12 @@ export default function Home() {
         </div>
 
         <h1 className="text-[32px]  md:text-5xl lg:text-6xl font-bold">
-          <p className="text-white/60 inline">I&apos;m </p>
-          <span className="bg-gradient-to-br bg-clip-text text-transparent from-[#7CC0C4] via-[#548FBA] to-[#3C84C7]">
-            Kabiru Akeem
-          </span>
+          <div className="mb-3">
+            <p className="text-white/60 inline">I&apos;m </p>
+            <span className="bg-gradient-to-br bg-clip-text text-transparent from-[#7CC0C4] via-[#548FBA] to-[#3C84C7]">
+              Kabiru Akeem
+            </span>
+          </div>
           <p>a Software Engineer</p>
         </h1>
 
@@ -23,7 +25,7 @@ export default function Home() {
         </p>
       </div>
       <Image
-        src="/me.jpg"
+        src="/kabby.jpeg"
         alt="my-img"
         width={350}
         height={350}
