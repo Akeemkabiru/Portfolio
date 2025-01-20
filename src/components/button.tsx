@@ -8,8 +8,8 @@ export default function Button({ children }: { children: string }) {
 
 export function ResumeBtn() {
   return (
-    <button className="bg-gradient-to-r text-sm transition-all duration-500 from-cyan-500 to-teal-500 bg-cyan-500 px-6 py-3 rounded-md">
-      Resume
+    <button className="bg-gradient-to-r transition-all duration-500 from-cyan-500 to-teal-500 bg-cyan-500 px-6 py-3 rounded-[10px] font-semibold">
+      Download Resume
     </button>
   );
 }

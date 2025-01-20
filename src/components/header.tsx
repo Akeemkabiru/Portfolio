@@ -14,10 +14,10 @@ export default function Header() {
   const { push } = useRouter();
 
   const socialHandles = [
-    { icon: <BsLinkedin size={25} />, href: "" },
-    { icon: <BsGithub size={25} />, href: "" },
-    { icon: <BsWhatsapp size={25} />, href: "" },
-    { icon: <BsTwitterX size={25} />, href: "" },
+    { icon: <BsLinkedin size={20} />, href: "" },
+    { icon: <BsGithub size={20} />, href: "" },
+    { icon: <BsWhatsapp size={20} />, href: "" },
+    { icon: <BsTwitterX size={20} />, href: "" },
   ];
 
   const handleMenuSwitch = () => {
@@ -26,18 +26,47 @@ export default function Header() {
 
   return (
     <div className="fixed w-full top-4  flex  flex-col gap-4 items-center justify-center">
-      <div className="flex justify-between items-center w-[90%] backdrop-blur-sm bg-white/20  px-4 py-2 shadow-md  rounded-[20px] ">
+      <div className="flex justify-between items-center px-6 py-4 rounded-2xl bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f]  std-backdrop-blur w-[90%]">
         <Image src="/logo.png" alt="logo" width={45} height={45} />
 
-        {isOpenMenu ? (
-          <RiCloseFill size={25} onClick={handleMenuSwitch} />
-        ) : (
-          <RiMenu3Line size={25} onClick={handleMenuSwitch} />
-        )}
+        <div className="md:flex hidden lg:gap-8 gap-4 items-center">
+          {NAVBAR_ITEMS.map(({ value, route }, index: number) => {
+            const isActive = pathName.endsWith(route);
+
+            return (
+              <Link
+                key={index}
+                href={route}
+                className={`cursor-pointer font-medium ${
+                  isActive ? "text-primary" : "text-gray-500 "
+                }`}
+              >
+                {value}
+              </Link>
+            );
+          })}
+        </div>
+        <div className="md:flex gap-4 hidden">
+          {socialHandles.map(({ icon, href }, index: number) => {
+            return (
+              <Link key={index} href={href}>
+                {icon}
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="md:hidden block">
+          {isOpenMenu ? (
+            <RiCloseFill size={25} onClick={handleMenuSwitch} />
+          ) : (
+            <RiMenu3Line size={25} onClick={handleMenuSwitch} />
+          )}
+        </div>
       </div>
 
       <div
-        className={`w-[90%] bg-white/30 rounded-[20px] backdrop-blur-md shadow-md transform transition-transform duration-500 ease-in-out flex justify-between items-center p-4 ${
+        className={`w-[90%] rounded-2xl bg-gradient-to-r from-[#d9d9d91f]  max-w-[90%] to-[#7373731f] backdrop-blur-md shadow-md transform transition-transform duration-500 ease-in-out flex justify-between std-backdrop-blur items-center p-4 ${
           isOpenMenu ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
         }`}
       >
