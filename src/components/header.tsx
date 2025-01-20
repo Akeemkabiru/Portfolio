@@ -25,8 +25,8 @@ export default function Header() {
   };
 
   return (
-    <div className="fixed w-full top-4  flex  flex-col gap-4 items-center justify-center">
-      <div className="flex justify-between items-center px-6 py-4 rounded-2xl bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f]  std-backdrop-blur w-[90%]">
+    <div className="fixed w-full top-4 md:top-6 z-10 px-6 md:px-12 lg:px-16 flex  flex-col gap-4 items-center justify-center">
+      <div className="flex justify-between w-full items-center px-6 py-4 rounded-2xl bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f]  std-backdrop-blur">
         <Image src="/logo.png" alt="logo" width={45} height={45} />
 
         <div className="md:flex hidden lg:gap-8 gap-4 items-center">
@@ -66,7 +66,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`w-[90%] rounded-2xl bg-gradient-to-r from-[#d9d9d91f]  max-w-[90%] to-[#7373731f] backdrop-blur-md shadow-md transform transition-transform duration-500 ease-in-out flex justify-between std-backdrop-blur items-center p-4 ${
+        className={`w-full rounded-2xl bg-gradient-to-r from-[#d9d9d91f]  to-[#7373731f] backdrop-blur-md shadow-md transform transition-transform duration-500 ease-in-out flex justify-between std-backdrop-blur items-center p-4 ${
           isOpenMenu ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
         }`}
       >
