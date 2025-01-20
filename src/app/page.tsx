@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="w-full">
+    <main className="w-full flex md:flex-row flex-col justify-between gap-6">
       <div className="lg:space-y-8 space-y-4 lg:w-[60%] w-full">
         <div className="flex gap-2 items-center">
           <p className="text-white/60 text-xl lg:text-3xl"> Hey, there </p>
@@ -22,6 +22,13 @@ export default function Home() {
           applications with modern frameworks.
         </p>
       </div>
+      <Image
+        src="/me.jpg"
+        alt="my-img"
+        width={350}
+        height={350}
+        className="rounded-2xl"
+      />
     </main>
   );
 }
