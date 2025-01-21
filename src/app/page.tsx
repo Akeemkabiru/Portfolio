@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <section className="w-full lg:h-screen flex justify-center items-center">
+      <section className="w-full flex justify-center items-center">
         <div className="flex md:flex-row flex-col justify-between gap-6">
           <div className="lg:space-y-8 space-y-4 lg:w-[60%] w-full">
             <div className="flex gap-2 items-center">
@@ -38,7 +38,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="pt-16 lg:pt-0 space-y-8 md:space-y-12">
+      <section id="projects" className="pt-28 space-y-8 md:space-y-12">
+        <p className={`uppercase text-4xl lg:text-5xl font-bold`}>Projects</p>
         {EXPERIENCE.map(
           (
             { picture, title, description, stacks, link, gitLink },
