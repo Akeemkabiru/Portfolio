@@ -7,6 +7,15 @@ import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import { BsGithub, BsLink } from "react-icons/bs";
 
+export interface ICard {
+  picture: string;
+  title: string;
+  description: string;
+  stacks: string[];
+  link: string;
+  gitLink?: string;
+}
+
 export default function Card({
   picture,
   title,
@@ -14,14 +23,7 @@ export default function Card({
   stacks,
   link,
   gitLink,
-}: {
-  picture: string;
-  title: string;
-  description: string;
-  stacks: string[];
-  link: string;
-  gitLink?: string;
-}) {
+}: ICard) {
   const { ref, inView } = useInView({
     threshold: 0.3,
     rootMargin: "-100px 0px",
@@ -40,7 +42,7 @@ export default function Card({
         alt="img"
         width={500}
         height={700}
-        className="rounded-2xl"
+        className="rounded-2xl w-full lg:w-fit"
       />
       <div className="space-y-6">
         <div className="flex items-center justify-between w-full">
