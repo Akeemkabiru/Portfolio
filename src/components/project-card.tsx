@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 import "intersection-observer";
@@ -18,7 +20,7 @@ export default function Card({
   description: string;
   stacks: string[];
   link: string;
-  gitLink: string;
+  gitLink?: string;
 }) {
   const { ref, inView } = useInView({
     threshold: 0.3,
@@ -33,22 +35,35 @@ export default function Card({
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
       }`}
     >
-      <Image src={picture} alt="img" width={500} height={300} />
-      <div>
-        <div>
-          <h2>{title}</h2>
+      <Image
+        src={picture}
+        alt="img"
+        width={500}
+        height={700}
+        className="rounded-2xl"
+      />
+      <div className="space-y-6">
+        <div className="flex items-center justify-between w-full">
+          <h2 className="text-3xl lg:text-4xl font-bold">{title}</h2>
           <Link href={link}>
-            <BsLink />
+            <BsLink size={25} />
           </Link>
 
-          <Link href={gitLink}>
-            <BsGithub size={32} />
-          </Link>
+          {gitLink && (
+            <Link href={gitLink}>
+              <BsGithub size={32} />
+            </Link>
+          )}
         </div>
         <p>{description}</p>
-        <div>
+        <div className="flex gap-3 md:gap-4 flex-wrap ">
           {stacks.map((stack, index: number) => (
-            <div key={index}>{stack}</div>
+            <div
+              className="uppercase whitespace-nowrap bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] px-2 py-[6px] md:py-[6px] md:px-3 rounded-[4px] font-medium md:font-bold text-base lg:text-lg"
+              key={index}
+            >
+              {stack}
+            </div>
           ))}
         </div>
       </div>
