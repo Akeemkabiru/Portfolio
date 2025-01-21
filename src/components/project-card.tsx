@@ -44,7 +44,7 @@ export default function Card({
       />
       <div className="space-y-6">
         <div className="flex items-center justify-between w-full">
-          <h2 className="text-3xl lg:text-4xl font-bold">{title}</h2>
+          <h2 className="text-2xl lg:text-3xl font-bold">{title}</h2>
           <Link href={link}>
             <BsLink size={25} />
           </Link>
@@ -59,7 +59,7 @@ export default function Card({
         <div className="flex gap-3 md:gap-4 flex-wrap ">
           {stacks.map((stack, index: number) => (
             <div
-              className="uppercase whitespace-nowrap bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] px-2 py-[6px] md:py-[6px] md:px-3 rounded-[4px] font-medium md:font-bold text-base lg:text-lg"
+              className="uppercase whitespace-nowrap bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] px-2 py-[6px] md:py-[6px] md:px-3 rounded-[4px] font-medium md:font-bold text-base"
               key={index}
             >
               {stack}
