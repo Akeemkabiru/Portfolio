@@ -1,10 +1,10 @@
 import { ICard } from "@/components/project-card";
 
 export const NAVBAR_ITEMS = [
-  { value: "Home", route: "/" },
-  { value: "Projects", route: "#projects" },
-  { value: "About", route: "/experience" },
-  { value: "Contact", route: "/contact" },
+  { title: "Home", id: "/" },
+  { title: "Projects", id: "#projects" },
+  { title: "About", id: "#about" },
+  { title: "Contact", id: "#contact" },
 ];
 
 export const SKILLS_ITEM = [
