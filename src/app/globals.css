@@ -4,13 +4,13 @@
 
 :root {
   --background: #08233b;
-  --foreground: #171717;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #08233b;
-    --foreground: #cacaca;
+    --foreground: #ffffff;
   }
 }
 

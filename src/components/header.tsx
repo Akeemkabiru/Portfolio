@@ -6,7 +6,8 @@ import Image from "next/image";
 import { NAVBAR_ITEMS } from "@/utils/constant";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { BsGithub, BsLinkedin, BsTwitterX, BsWhatsapp } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
+import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineX } from "react-icons/ai";
 
 export default function Header() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -14,10 +15,12 @@ export default function Header() {
   const { push } = useRouter();
 
   const socialHandles = [
-    { icon: <BsLinkedin size={20} />, href: "" },
-    { icon: <BsGithub size={20} />, href: "" },
-    { icon: <BsWhatsapp size={20} />, href: "" },
-    { icon: <BsTwitterX size={20} />, href: "" },
+    { icon: <AiOutlineLinkedin size={23} />, href: "" },
+    {
+      icon: <AiOutlineGithub size={23} />,
+      href: "https://github.com/Akeemkabiru",
+    },
+    { icon: <AiOutlineX size={23} />, href: "" },
   ];
 
   const handleMenuSwitch = () => {
@@ -26,22 +29,15 @@ export default function Header() {
 
   return (
     <div className="fixed w-full top-4 md:top-6 z-10 px-6 md:px-12 lg:px-16 flex  flex-col gap-4 items-center justify-center">
-      <div className="flex justify-between w-full items-center px-6 py-4 rounded-2xl bg-gradient-to-r from-[#d9d9d91f]  to-[#7373731f] backdrop-blur-md   std-backdrop-blur">
+      {/* desktop menu */}
+      <div className="flex justify-between w-full items-center px-6 py-4 rounded-2xl bg-gradient-to-r from-[#d9d9d91f]  to-[#7373731f] backdrop-blur-md std-backdrop-blur">
         <Image src="/logo.png" alt="logo" width={45} height={45} />
 
         <div className="md:flex hidden lg:gap-8 gap-4 items-center">
-          {NAVBAR_ITEMS.map(({ value, route }, index: number) => {
-            const isActive = pathName.endsWith(route);
-
+          {NAVBAR_ITEMS.map(({ title, id }, index: number) => {
             return (
-              <Link
-                key={index}
-                href={route}
-                className={`cursor-pointer font-medium ${
-                  isActive ? "text-primary" : "text-gray-500 "
-                }`}
-              >
-                {value}
+              <Link key={index} href={id}>
+                {title}
               </Link>
             );
           })}
@@ -65,25 +61,23 @@ export default function Header() {
         </div>
       </div>
 
+      {/* mobile  menu*/}
       <div
         className={`w-full rounded-2xl bg-gradient-to-r from-[#d9d9d91f]  to-[#7373731f] backdrop-blur-md shadow-md transform transition-transform duration-500 ease-in-out flex justify-between std-backdrop-blur items-center p-4 ${
           isOpenMenu ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
         }`}
       >
         <div className="space-y-4 font-semibold">
-          {NAVBAR_ITEMS.map(({ value, route }, index: number) => {
-            const isActive = pathName.endsWith(route);
-
+          {NAVBAR_ITEMS.map(({ title, id }, index: number) => {
             return (
               <div
                 key={index}
                 onClick={() => {
-                  push(route);
+                  push(id);
                   setIsOpenMenu(false);
                 }}
-                className={`cursor-pointer ${isActive ? "text-primary" : ""}`}
               >
-                {value}
+                {title}
               </div>
             );
           })}
