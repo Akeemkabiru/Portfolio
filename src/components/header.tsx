@@ -5,22 +5,23 @@ import { useState } from "react";
 import Image from "next/image";
 import { NAVBAR_ITEMS } from "@/utils/constant";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
+import { useRouter } from "next/navigation";
 import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineX } from "react-icons/ai";
 
 export default function Header() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const pathName = usePathname();
   const { push } = useRouter();
 
   const socialHandles = [
-    { icon: <AiOutlineLinkedin size={23} />, href: "" },
     {
-      icon: <AiOutlineGithub size={23} />,
+      icon: <AiOutlineLinkedin size={25} />,
+      href: "https://www.linkedin.com/in/akeemkabiru/",
+    },
+    {
+      icon: <AiOutlineGithub size={25} />,
       href: "https://github.com/Akeemkabiru",
     },
-    { icon: <AiOutlineX size={23} />, href: "" },
+    { icon: <AiOutlineX size={23} />, href: "https://x.com/kabby_10" },
   ];
 
   const handleMenuSwitch = () => {
@@ -45,7 +46,7 @@ export default function Header() {
         <div className="md:flex gap-4 hidden">
           {socialHandles.map(({ icon, href }, index: number) => {
             return (
-              <Link key={index} href={href}>
+              <Link key={index} href={href} target="_blank">
                 {icon}
               </Link>
             );
@@ -85,7 +86,7 @@ export default function Header() {
         <div className="grid grid-cols-2 items-center gap-8">
           {socialHandles.map(({ icon, href }, index: number) => {
             return (
-              <Link key={index} href={href}>
+              <Link key={index} href={href} target="_blank">
                 {icon}
               </Link>
             );
