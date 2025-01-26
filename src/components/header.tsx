@@ -64,7 +64,7 @@ export default function Header() {
 
       {/* mobile  menu*/}
       <div
-        className={`w-full rounded-2xl bg-gradient-to-r from-[#d9d9d91f]  to-[#7373731f] backdrop-blur-md shadow-md transform transition-transform duration-500 ease-in-out flex justify-between std-backdrop-blur items-center p-4 ${
+        className={`w-full rounded-2xl bg-gradient-to-r from-[#d9d9d91f]  to-[#7373731f] backdrop-blur-md shadow-md transform transition-transform duration-500 ease-in-out flex justify-between std-backdrop-blur items-center p-3 ${
           isOpenMenu ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
         }`}
       >
