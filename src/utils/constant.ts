@@ -78,7 +78,7 @@ export const EXPERIENCE = [
     logo: "/haptletech.jpeg",
     role: "Frontend Intern",
     companyName: "Haptle Technologies",
-    date: "September - Present",
+    date: "September 2024 - Present",
     type: "Intern",
     experience: [
       "Developed responsive user interfaces for the event planning platform using React, TypeScript, Next.js, and Tailwind CSS, ensuring seamless cross-device experiences.",

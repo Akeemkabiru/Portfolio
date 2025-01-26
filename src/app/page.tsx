@@ -3,6 +3,8 @@ import { ABOUT, EXPERIENCE, PROJECTS } from "@/utils/constant";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { BsArrowRight, BsFillTriangleFill } from "react-icons/bs";
+import { FaCircle } from "react-icons/fa6";
 
 export default function Home() {
   const curYear = new Date().getFullYear();
@@ -82,7 +84,7 @@ export default function Home() {
                 index: number
               ) => {
                 return (
-                  <div key={index} className="flex gap-2">
+                  <div key={index} className="flex gap-4">
                     <Image
                       src={logo}
                       alt={`${companyName}-logo`}
@@ -104,8 +106,18 @@ export default function Home() {
                       <ul className="space-y-4">
                         {experience.map((text: string, index: number) => {
                           return (
-                            <li key={index} className="flex gap-1">
-                              <AiOutlineArrowRight size={20} /> {text}
+                            <li key={index} className="flex items-center gap-2">
+                              <div className="h-fit">
+                                <BsFillTriangleFill
+                                  style={{
+                                    fontSize: "12px",
+                                    color: "gray",
+                                    transform: "rotate(90deg)",
+                                  }}
+                                  size={10}
+                                />{" "}
+                              </div>
+                              <p> {text}</p>
                             </li>
                           );
                         })}
