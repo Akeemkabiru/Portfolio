@@ -47,15 +47,17 @@ export default function Card({
       <div className="space-y-6">
         <div className="flex items-center justify-between w-full">
           <h2 className="text-2xl lg:text-3xl font-bold">{title}</h2>
-          <Link href={link}>
-            <BsLink size={25} />
-          </Link>
-
-          {gitLink && (
-            <Link href={gitLink}>
-              <BsGithub size={32} />
+          <div className="flex items-center gap-4">
+            <Link href={link}>
+              <BsLink size={20} />
             </Link>
-          )}
+
+            {gitLink && (
+              <Link href={gitLink}>
+                <BsGithub size={20} />
+              </Link>
+            )}
+          </div>
         </div>
         <p>{description}</p>
         <div className="flex gap-3 md:gap-4 flex-wrap ">
