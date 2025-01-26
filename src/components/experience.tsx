@@ -4,7 +4,7 @@ import { BsFillTriangleFill } from "react-icons/bs";
 
 export default function Experience() {
   return (
-    <section id="experience" className="mt-20">
+    <section id="experience" className="pt-32">
       <p className={`uppercase text-4xl lg:text-5xl font-bold`}>
         Work experience
       </p>
