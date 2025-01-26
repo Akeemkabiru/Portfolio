@@ -3,7 +3,6 @@ import { ABOUT, EXPERIENCE, PROJECTS } from "@/utils/constant";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { FaList } from "react-icons/fa6";
 
 export default function Home() {
   const curYear = new Date().getFullYear();
