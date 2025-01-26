@@ -2,7 +2,7 @@ import { ABOUT } from "@/utils/constant";
 
 export default function About() {
   return (
-    <section id="about" className="mt-20 space-y-8 ">
+    <section id="about" className="pt-32 space-y-8 ">
       <p
         className={`uppercase text-4xl lg:text-5xl font-bold w-[70%] leading-[72px]`}
       >

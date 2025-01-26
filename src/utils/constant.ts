@@ -3,6 +3,7 @@ import { ICard } from "@/components/project-card";
 export const NAVBAR_ITEMS = [
   { title: "Home", id: "/" },
   { title: "Projects", id: "#projects" },
+  { title: "Experience", id: "#experience" },
   { title: "About", id: "#about" },
   { title: "Contact", id: "#contact" },
 ];
