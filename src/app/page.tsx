@@ -1,10 +1,13 @@
 import Card from "@/components/project-card";
 import { ABOUT, EXPERIENCE, PROJECTS } from "@/utils/constant";
 import Image from "next/image";
+import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FaList } from "react-icons/fa6";
 
 export default function Home() {
+  const curYear = new Date().getFullYear();
+
   return (
     <>
       {/* hero section */}
@@ -137,6 +140,24 @@ export default function Home() {
             );
           })}
         </div>
+      </section>
+
+      <section
+        id="footer"
+        className="my-6 sm:my-8 text-sm sm:text-base lg:text-lg flex md:justify-between justify-center"
+      >
+        <p>
+          <span className="text-xl sm:text-2xl">&copy;</span> {curYear} . KABIRU
+          AKEEM . ALL RIGHTS RESERVED
+        </p>
+        <Link
+          className="md:flex hidden items-center gap-1 leading-tight"
+          href="#home"
+          data-blobity-offset-x="2"
+          data-blobity-offset-y="0"
+        >
+          <p className="underline leading-tight">SCROLL TO TOP</p>
+        </Link>
       </section>
     </>
   );
