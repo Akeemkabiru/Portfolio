@@ -46,9 +46,9 @@ export default function Work() {
                   <Image
                     src={logo}
                     alt={`${companyName}-logo`}
-                    width={60}
-                    height={60}
-                    className="rounded-2xl"
+                    width={35}
+                    height={35}
+                    className="rounded-[6px]"
                   />
                 </div>
 
