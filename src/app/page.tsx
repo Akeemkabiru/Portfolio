@@ -1,4 +1,5 @@
 import About from "@/components/about";
+import Contact from "@/components/contact";
 import Copyright from "@/components/copy";
 
 import NavBar from "@/components/header";
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <Work />
         <About />
+        <Contact />
         <Copyright />
       </section>
     </main>
