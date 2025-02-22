@@ -91,35 +91,22 @@ export const EXPERIENCE = [
 export const ABOUT = [
   {
     text: "My passion lies in creating robust and intuitive software solutions that empower businesses to grow and thrive. Whether it 's designing a dynamic website to amplify brand visibility or developing efficient software tools to automate processes, I enjoy helping businesses evolve from where they are today to their ultimate goals—and beyond.",
-    secondText: [
-      "Typescript",
-      "Javascript",
-      "Reactjs",
-      "Nextjs",
-      "Redux",
-      "RTK",
-      "React Query",
-      "HTML5",
-      "Zustand",
-      "Golang",
-      "Git & Github",
-      "Formik",
-      "React Form Hook",
-    ],
   },
   {
     text: "With 3 years of experience as a Software Engineer, I specialize in building high-performance applications for web and mobile platforms. My work emphasizes clean, scalable code and seamless functionality, leveraging modern frameworks like React.js, Next.js, and Golang to deliver solutions that are both robust and user-friendly.",
-    secondText: [
-      "CSS3/SCSS/SASS",
-      "Tailwind CSS",
-      "Styled Components",
-      "Chakra UI",
-      "Framer Motion",
-      "Bootstrap",
-      "ReCharts",
-    ],
   },
   {
     text: "Each project I take on brings a unique set of challenges, and I approach every one with a mindset of continuous learning and innovation. By collaborating closely with teams and stakeholders, I ensure that my solutions address real-world business needs while exceeding expectations. My ultimate goal is to deliver software that businesses can confidently rely on—solutions that reflect their vision and resonate with their users.",
+  },
+];
+
+export const TOOLS = [
+  {
+    title: "Frontend Tools",
+    text: "Typescript, Javascript Reactjs, Nextjs,  Redux, RTK, React Query, HTML5, Zustand, Golang, Git & Github, Formik, React Form Hook",
+  },
+  {
+    title: "UI Libraries",
+    text: "CSS3/SCSS/SASS, Tailwind CSS, Styled Components, Chakra UI, Framer Motion, Bootstrap, ReCharts",
   },
 ];

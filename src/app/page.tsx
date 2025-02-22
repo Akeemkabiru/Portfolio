@@ -12,7 +12,6 @@ export default function Home() {
       <section className="px-4 pt-28 space-y-16">
         <Hero />
         <Work />
-
         <About />
         <Copyright />
       </section>

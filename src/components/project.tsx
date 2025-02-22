@@ -6,7 +6,7 @@ export default function Work() {
   return (
     <>
       <section id="projects" className="space-y-8 md:space-y-12">
-        <p className={`uppercase text-5xl text-white/60  font-bold`}>
+        <p className={`uppercase text-4xl text-white/60  font-bold`}>
           Projects
         </p>
         {PROJECTS.map(
@@ -30,7 +30,7 @@ export default function Work() {
       </section>
 
       <section className="space-y-8 md:space-y-12">
-        <p className={`uppercase text-5xl text-white/60  font-bold`}>
+        <p className={`uppercase text-4xl text-white/60  font-bold`}>
           Work experience
         </p>
 
