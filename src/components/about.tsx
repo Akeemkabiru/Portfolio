@@ -1,36 +1,30 @@
 export default function About() {
   return (
     <section id="about" className="space-y-8 md:space-y-12">
-      <p className={`uppercase text-4xl text-white/60  font-bold`}>
-        Building Scalable and Intuitive User Interfaces
+      <p className="uppercase text-4xl text-white/60 font-bold tracking-wider">
+        Scalable, Intuitive User Interfaces
       </p>
 
-      <div className="space-y-8">
+      <div className="space-y-6">
         <p>
-          My passion lies in creating robust and intuitive software solutions
-          that empower businesses to grow and thrive. Whether it&apos;s
-          designing a dynamic website to amplify brand visibility or developing
-          efficient software tools to automate processes, I enjoy helping
-          businesses evolve from where they are today to their ultimate
-          goals—and beyond.
+          I&apos;m a Software Engineer with 3+ years of experience, passionate
+          about building robust, scalable, and user-friendly applications. I
+          specialize in modern frameworks like React.js, Next.js, and Golang to
+          create solutions that empower businesses to grow and thrive.
         </p>
 
         <p>
-          With 3 years of experience as a Software Engineer, I specialize in
-          building high-performance applications for web and mobile platforms.
-          My work emphasizes clean, scalable code and seamless functionality,
-          leveraging modern frameworks like React.js, Next.js, and Golang to
-          deliver solutions that are both robust and user-friendly.
+          From designing dynamic websites to developing efficient tools that
+          automate processes, I focus on delivering clean, high-performance code
+          that addresses real-world business needs. I thrive on collaboration,
+          innovation, and solving unique challenges to create software that
+          exceeds expectations.
         </p>
 
         <p>
-          Each project I take on brings a unique set of challenges, and I
-          approach every one with a mindset of continuous learning and
-          innovation. By collaborating closely with teams and stakeholders, I
-          ensure that my solutions address real-world business needs while
-          exceeding expectations. My ultimate goal is to deliver software that
-          businesses can confidently rely on—solutions that reflect their vision
-          and resonate with their users
+          My goal is to craft solutions that reflect your vision, resonate with
+          users, and drive measurable impact—helping businesses evolve from
+          where they are today to their ultimate goals and beyond.
         </p>
       </div>
 
