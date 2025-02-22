@@ -1,14 +1,29 @@
+"use client";
+
 import { EXPERIENCE, PROJECTS } from "@/utils/constant";
 import Card from "./project-card";
-import Image from "next/image";
+import Title from "./ui/title";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { useView } from "@/context";
+import TimelineItem from "./work/timeline";
 
 export default function Work() {
+  const { setSectionInView } = useView();
+
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    rootMargin: "-100px 0px",
+  });
+
+  useEffect(() => {
+    if (inView) setSectionInView("work");
+  }, [inView, setSectionInView]);
+
   return (
     <>
-      <section id="projects" className="space-y-8 md:space-y-12">
-        <p className={`uppercase text-4xl text-white/60  font-bold`}>
-          Projects
-        </p>
+      <section className="flex flex-col gap-6 md:gap-10" ref={ref} id="work">
+        <Title>Projects</Title>
         {PROJECTS.map(
           (
             { picture, title, description, stacks, link, gitLink },
@@ -29,59 +44,27 @@ export default function Work() {
         )}
       </section>
 
-      <section className="space-y-8 md:space-y-12">
-        <p className={`uppercase text-4xl text-white/60  font-bold`}>
-          Work experience
-        </p>
+      <div className="mt-10 md:mt-[110px]">
+        <Title> Work experience</Title>
 
-        <div className="space-y-8 flex-1">
-          {EXPERIENCE.map(
-            (
-              { logo, companyName, role, date, experience, type },
-              index: number
-            ) => (
-              <div key={index} className="flex gap-6">
-                {/* Company Logo */}
-                <div className="flex-shrink-0">
-                  <Image
-                    src={logo}
-                    alt={`${companyName}-logo`}
-                    width={35}
-                    height={35}
-                    className="rounded-[6px]"
-                  />
-                </div>
+        <div className="flex mt-6 gap-4 pl-3">
+          <div className="w-3 h-auto bg-gradient-to-b from-white to-transparent" />
 
-                {/* Experience Details */}
-                <div className="flex-1">
-                  <h2 className="text-2xl sm:text-[2rem] font-bold text-white/90">
-                    {role}
-                  </h2>
-                  <h3 className="text-base sm:text-lg font-semibold text-white/80 my-2">
-                    {companyName} -{" "}
-                    <span className="text-white/60">{type}</span>
-                  </h3>
-                  <p className="text-base sm:text-lg text-white/60 my-2">
-                    {date}
-                  </p>
-
-                  {/* Experience Bullet Points */}
-                  <ul className="space-y-3 list-disc pl-5">
-                    {experience.map((text: string, index: number) => (
-                      <li
-                        key={index}
-                        className="text-base sm:text-lg text-white/80 leading-relaxed"
-                      >
-                        {text}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )
-          )}
+          <div className="flex flex-col gap-10">
+            {EXPERIENCE.map((item, index) => (
+              <TimelineItem
+                key={index}
+                companyImg={item.companyImg}
+                jobTitle={item.jobTitle}
+                company={item.company}
+                jobType={item.jobType}
+                duration={item.duration}
+                stuffIDid={item.stuffIDid}
+              />
+            ))}
+          </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }
