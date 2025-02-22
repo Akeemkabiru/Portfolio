@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main>
       <NavBar />
-      <section className="px-4 pt-28 space-y-16">
+      <section className="px-4 pt-32 space-y-16">
         <Hero />
         <Work />
         <About />
