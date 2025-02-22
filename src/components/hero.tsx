@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import { easeIn, easeInOut, motion } from "framer-motion";
-
+import { easeInOut, motion } from "framer-motion";
 import "intersection-observer";
 import { useInView } from "react-intersection-observer";
 import { useView } from "@/context";
@@ -16,21 +15,12 @@ export default function Hero() {
     },
   };
 
-  const animateIn1 = {
+  const imageAnimation = {
     opacity: [0, 1],
-    y: ["1rem", "0px"],
+    scale: [0.8, 1],
     transition: {
-      delay: 1.5,
-      duration: 0.7,
-      ease: easeIn,
-    },
-  };
-
-  const animateIn2 = {
-    ...animateIn1,
-    transition: {
-      ...animateIn1.transition,
-      delay: 2,
+      duration: 1.5,
+      ease: easeInOut,
     },
   };
 
@@ -48,7 +38,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="flex flex-col sm:flex-row h-dvh items-center gap-6 sm:justify-between"
+      className="flex flex-col sm:flex-row lg:h-dvh items-center gap-6 sm:justify-between"
       id="home"
     >
       <div className="text sm:w-[60%]">
@@ -68,16 +58,18 @@ export default function Hero() {
           >
             <Image
               src="/hand-wave.svg"
-              width={30}
-              height={30}
+              width={40}
+              height={40}
               alt="hand-waving"
+              priority
             />
           </motion.div>
         </motion.div>
         <motion.h1
           className="text-[32px] smm:text-[40px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight font-bold"
           initial={{ opacity: 0 }}
-          animate={animateIn1}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: easeInOut }}
         >
           <p className="text-white/60 inline">I&apos;m </p>
           <span className="bg-gradient-to-br bg-clip-text text-transparent from-[#7CC0C4] via-[#548FBA] to-[#3C84C7]">
@@ -88,8 +80,9 @@ export default function Hero() {
 
         <motion.p
           initial={{ opacity: 0 }}
-          animate={animateIn2}
-          className="text-white/40  text-xl smm:text-2xl lg:text-3xl xl:text-4xl mt-3 smm:mt-6 "
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.8, ease: easeInOut }}
+          className="text-white/40 text-xl smm:text-2xl lg:text-3xl xl:text-4xl mt-3 smm:mt-6"
         >
           Specialize in building intuitive, high-performance web and mobile
           applications.
@@ -97,15 +90,20 @@ export default function Hero() {
       </div>
 
       {/* IMAGE */}
-      <div className="flex items-center justify-center">
+      <motion.div
+        className="flex items-center justify-center"
+        animate={imageAnimation}
+      >
         <Image
           src="/kabby.jpeg"
-          width={350}
-          height={350}
+          width={400}
+          height={400}
           alt="kabby"
-          className="w-[90%] rounded-md"
+          className="w-[90%] max-w-[400px] rounded-lg shadow-lg"
+          quality={100}
+          priority
         />
-      </div>
+      </motion.div>
     </section>
   );
 }
