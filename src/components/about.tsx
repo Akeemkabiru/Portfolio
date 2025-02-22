@@ -52,12 +52,7 @@ export default function About() {
             with users, and drive measurable impact—helping businesses evolve
             from where they are today to their ultimate goals and beyond. Wanna
             learn more? Here&apos;s <br className="hidden md:block" />
-            <Link
-              className="underline"
-              href={
-                "https://drive.google.com/file/d/1Rd-IB_5pxsGj4RDtHjEggPB392ND29xB/view?usp=sharing"
-              }
-            >
+            <Link className="underline" href={"https://akeemkabiru.tiiny.site"}>
               my résumè
             </Link>
             .
