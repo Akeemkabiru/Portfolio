@@ -7,39 +7,43 @@ import { useState } from "react";
 import { FiX, FiMenu } from "react-icons/fi";
 
 export default function NavBar() {
-  const [isOpenNav, setIsOpenNav] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const toggleMenu = () => setIsOpenNav((prev) => !prev);
+  const toggleMenu = () => setIsOpen((prev) => !prev);
 
   return (
     <>
       {/* mobile navbar */}
-      <nav className="fixed w-full p-4">
-        <div className="flex items-center justify-between bg-white/10 px-4 py-2 rounded-2xl">
+      <nav className="fixed w-full p-4 ">
+        <div className="flex items-center justify-between bg-white/20 backdrop-blur-lg p-4 rounded-2xl">
           <Image src="/logo.png" alt="logo" width={35} height={35} />
-          {isOpenNav ? (
-            <FiX onClick={toggleMenu} size={20} />
+          {isOpen ? (
+            <FiX className="cursor-pointer" onClick={toggleMenu} size={24} />
           ) : (
-            <FiMenu onClick={toggleMenu} size={20} />
+            <FiMenu className="cursor-pointer" onClick={toggleMenu} size={24} />
           )}
         </div>
 
         {/* drop down */}
 
-        {isOpenNav ? (
-          <div className="bg-white/10 px-4 py-2  mt-4 rounded-2xl">
-            {/* navigations  list*/}
-            <div className="flex flex-col gap-4">
-              {NAVBAR_ITEMS.map(({ title, id }) => {
-                return (
-                  <Link href={id} key={id}>
-                    {title}
-                  </Link>
-                );
-              })}
-            </div>
+        <div
+          className={`bg-white/20 backdrop-blur-lg px-4 py-3  mt-4 rounded-2xl transition-all duration-300 ${
+            isOpen
+              ? "translate-y-0 opacity-100"
+              : "-translate-y-10 opacity-0 pointer-events-none"
+          }`}
+        >
+          {/* navigations  list*/}
+          <div className="flex flex-col gap-4">
+            {NAVBAR_ITEMS.map(({ title, id }) => {
+              return (
+                <Link href={id} key={id}>
+                  {title}
+                </Link>
+              );
+            })}
           </div>
-        ) : null}
+        </div>
       </nav>
     </>
   );
