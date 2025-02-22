@@ -69,9 +69,9 @@ export const EXPERIENCE = [
     date: "November 2024 - Present",
     type: "Full-time",
     experience: [
-      "Built a responsive landing page and a multi-page dashboard, collaborated with designers and backend engineers to deliver a user-centric and scalable Gamified Savings platform  using React.js, Next.js, and TailwindCSS.",
-      "Designed and implemented a secure authentication system, a seamless onboarding process, and dynamic, validated forms with React Hook Form.",
-      "Managed state efficiently using Zustand for application state and React Query for remote data fetching, optimizing performance and scalability.",
+      "Built responsive landing pages and dashboards using React.js, Next.js, and TailwindCSS.",
+      "Implemented secure authentication, onboarding, and dynamic forms with React Hook Form.",
+      "Managed state with Zustand and React Query for optimized performance and scalability.",
     ],
   },
   {
@@ -81,9 +81,9 @@ export const EXPERIENCE = [
     date: "September 2024 - Present",
     type: "Intern",
     experience: [
-      "Developed responsive user interfaces for the event planning platform using React, TypeScript, Next.js, and Tailwind CSS, ensuring seamless cross-device experiences.",
-      "Implemented OAuth authentication for secure login and built a dynamic settings page with Next.js routing to allow users to manage preferences.",
-      "Integrated APIs and managed global state with Zustand and utilized Formik for form handling and verification.",
+      "Developed responsive UIs for an event platform using React, TypeScript, and Tailwind CSS.",
+      "Implemented OAuth authentication and dynamic settings pages with Next.js routing.",
+      "Integrated APIs, managed state with Zustand, and handled forms with Formik.",
     ],
   },
 ];
