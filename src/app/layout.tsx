@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ViewProvider } from "@/context";
 
 export const metadata: Metadata = {
   title: "KabiruAkeem-Software-Engineer",
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
+        <ViewProvider>
+          <main>{children}</main>
+        </ViewProvider>
       </body>
     </html>
   );

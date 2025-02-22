@@ -63,24 +63,26 @@ export const PROJECTS: ICard[] = [
 
 export const EXPERIENCE = [
   {
-    logo: "/stashwise.jpeg",
-    role: "Frontend Developer",
-    companyName: "Stashwise Africa",
-    date: "November 2024 - Present",
-    type: "Full-time",
-    experience: [
+    companyImg: "/stashwise.jpeg",
+    jobTitle: "Frontend Developer",
+    company: "Stashwise Africa",
+    jobType: "Full-time",
+    duration: "November 2024 - Present",
+
+    stuffIDid: [
       "Built responsive landing pages and dashboards using React.js, Next.js, and TailwindCSS.",
       "Implemented secure authentication, onboarding, and dynamic forms with React Hook Form.",
       "Managed state with Zustand and React Query for optimized performance and scalability.",
     ],
   },
   {
-    logo: "/haptletech.jpeg",
-    role: "Frontend Intern",
-    companyName: "Haptle Technologies",
-    date: "September 2024 - Present",
-    type: "Intern",
-    experience: [
+    companyImg: "/haptletech.jpeg",
+    jobTitle: "Frontend Intern",
+    company: "Haptle Technologies",
+    jobType: "Internship",
+    duration: "September 2024 - Present",
+
+    stuffIDid: [
       "Developed responsive UIs for an event platform using React, TypeScript, and Tailwind CSS.",
       "Implemented OAuth authentication and dynamic settings pages with Next.js routing.",
       "Integrated APIs, managed state with Zustand, and handled forms with Formik.",
