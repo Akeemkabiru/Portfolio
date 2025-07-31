@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <main className="lg:px-16 md:px-8 px-4 py-8">
-      <nav className="flex items-center justify-center w-full px-4 mb-8 md:mb-0">
+      <nav className="flex items-center justify-center w-full px-4 mb-16 md:mb-0">
         <div className="flex items-center gap-x-6 bg-white/20 py-4 px-8 rounded-2xl backdrop-blur-lg">
           {NAVBAR_ITEMS.map(({ title, id }) => (
             <Link
@@ -118,7 +118,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.8, ease: easeInOut }}
-            className="text-white/40 text-xl smm:text-2xl lg:text-3xl xl:text-4xl mt-3 smm:mt-6 w-[65%]"
+            className="text-white/40 text-xl smm:text-2xl lg:text-3xl xl:text-4xl mt-3 smm:mt-6 md:w-[65%]"
           >
             Specialize in building intuitive, high-performance web and mobile
             applications.
