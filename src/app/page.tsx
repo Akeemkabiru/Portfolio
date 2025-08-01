@@ -266,6 +266,20 @@ export default function Home() {
                 Framer Motion, Bootstrap, ReCharts.
               </AnimatedBody>
             </div>
+
+            <div>
+              <AnimatedTitle
+                wordSpace={"mr-[0.5ch]"}
+                charSpace={"mr-[0.001em]"}
+                className="font-bold antialiased text-xl md:text-2xl mb-2"
+              >
+                Backend Tools
+              </AnimatedTitle>
+              <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
+                Node.js, Express.js, MongoDB, Mongoose, RESTful APIs, JWT &
+                OAuth2, Bcrypt, TypeScript, Golang, Redis, WebSockets, CI/CD,
+              </AnimatedBody>
+            </div>
           </div>
         </div>
       </section>
