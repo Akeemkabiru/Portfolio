@@ -63,29 +63,45 @@ export const PROJECTS: ICard[] = [
 
 export const EXPERIENCE = [
   {
-    companyImg: "/stashwise.jpeg",
-    jobTitle: "Frontend Developer",
-    company: "Stashwise Africa",
-    jobType: "Full-time",
-    duration: "November 2024 - Present",
-
-    stuffIDid: [
-      "Built responsive landing pages and dashboards using React.js, Next.js, and TailwindCSS.",
-      "Implemented secure authentication, onboarding, and dynamic forms with React Hook Form.",
-      "Managed state with Zustand and React Query for optimized performance and scalability.",
-    ],
-  },
-  {
     companyImg: "/haptletech.jpeg",
-    jobTitle: "Frontend Intern",
+    jobTitle: "Frontend Engineer",
     company: "Haptle Technologies",
-    jobType: "Internship",
+    jobType: "Full-time",
     duration: "September 2024 - Present",
 
     stuffIDid: [
       "Developed responsive UIs for an event platform using React, TypeScript, and Tailwind CSS.",
       "Implemented OAuth authentication and dynamic settings pages with Next.js routing.",
       "Integrated APIs, managed state with Zustand, and handled forms with Formik.",
+    ],
+  },
+  {
+    companyImg:
+      "https://res.cloudinary.com/dh5cjstjt/image/upload/v1752951447/Group_ihhaai.png",
+    jobTitle: "Backend Developer",
+    company: "Ethereal",
+    jobType: "Contract",
+    duration: "July 2025 - Present",
+
+    stuffIDid: [
+      "Designed and implemented secure authentication systems using JWT, OAuth2, and session management, following industry best practices to protect user data and prevent common vulnerabilities.",
+
+      "Developed scalable RESTful APIs with Express.js and MongoDB, applying clean architecture principles, middleware patterns, and modular route handling to ensure maintainability and performance.",
+
+      "Optimized backend performance through efficient database schema design, indexed queries, and asynchronous workflows; integrated third-party services and managed environment configurations across dev, staging, and production.",
+    ],
+  },
+  {
+    companyImg: "/stashwise.jpeg",
+    jobTitle: "Frontend Developer",
+    company: "Stashwise Africa",
+    jobType: "Contract",
+    duration: "November 2024 - June 2025",
+
+    stuffIDid: [
+      "Built responsive landing pages and dashboards using React.js, Next.js, and TailwindCSS.",
+      "Implemented secure authentication, onboarding, and dynamic forms with React Hook Form.",
+      "Managed state with Zustand and React Query for optimized performance and scalability.",
     ],
   },
 ];
