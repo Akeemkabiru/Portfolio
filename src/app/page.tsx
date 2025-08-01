@@ -442,12 +442,29 @@ export default function Home() {
           AKEEM . ALL RIGHTS RESERVED
         </p>
         <Link
-          className="md:flex hidden items-center gap-1 leading-tight"
+          className="md:flex hidden items-center gap-1 leading-tight animate-bounce"
           href="#home"
           data-blobity-offset-x="2"
           data-blobity-offset-y="0"
         >
-          <p className="underline leading-tight">SCROLL TO TOP</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-white hover:text-[#7CC0C4] transition duration-300"
+          >
+            <path d="M18 15l-6-6-6 6" />
+            <path d="M18 11l-6-6-6 6" />
+            <path d="M18 7l-6-6-6 6" />
+          </svg>
+
+          {/* <p className="underline leading-tight">SCROLL TO TOP</p> */}
         </Link>
       </section>
       <section className="px-4 md:px-10 lg:px-16 pt-32 lg:pt-16 space-y-16"></section>
