@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <main className="lg:px-16 md:px-8 px-4 py-8">
       <nav className="flex items-center justify-center w-full px-4 mb-16 md:mb-0">
-        <div className="flex items-center gap-x-6 bg-white/20 py-4 px-8 rounded-2xl backdrop-blur-lg">
+        <div className="flex items-center gap-x-6 bg-white/20 py-4 px-8 rounded-2xl backdrop-blur-lg fixed z-[100] top-6">
           {NAVBAR_ITEMS.map(({ title, id }) => (
             <Link
               href={id}
@@ -73,11 +73,23 @@ export default function Home() {
 
       {/* hero */}
       <section
-        className="flex flex-col sm:flex-row lg:h-dvh items-center gap-6 sm:justify-between mb-8"
+        className="flex flex-col sm:flex-row lg:h-dvh items-center gap-6 sm:justify-between mb-8 pt-12"
         id="home"
         ref={ref}
       >
         <div>
+          <motion.div animate={imageAnimation}>
+            <Image
+              src="/kabby.jpeg"
+              width={100}
+              height={100}
+              alt="kabby"
+              className="rounded-lg shadow-lg mb-6 border-2 border-[#548FBA] md:hidden"
+              quality={100}
+              priority
+            />
+          </motion.div>
+
           <motion.div
             className="grid grid-cols-9 w-fit smm:flex gap-2 mb-2 xl:mb-6"
             initial={{ opacity: 0 }}
