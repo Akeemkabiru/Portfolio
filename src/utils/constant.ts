@@ -84,11 +84,11 @@ export const EXPERIENCE = [
     duration: "July 2025 - Present",
 
     stuffIDid: [
-      "Designed and implemented secure authentication systems using JWT, OAuth2, and session management, following industry best practices to protect user data and prevent common vulnerabilities.",
+      "Designed and implemented secure authentication systems using JWT, OAuth2, and session management to prevent vulnerabilities.",
 
-      "Developed scalable RESTful APIs with Express.js and MongoDB, applying clean architecture principles, middleware patterns, and modular route handling to ensure maintainability and performance.",
+      "Developed scalable RESTful APIs with Express.js and MongoDB, applying clean architecture principle to ensure maintainability and performance.",
 
-      "Optimized backend performance through efficient database schema design, indexed queries, and asynchronous workflows; integrated third-party services and managed environment configurations across dev, staging, and production.",
+      "Optimized backend performance through efficient database schema design, indexed queries, and asynchronous workflows",
     ],
   },
   {
