@@ -211,11 +211,10 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-[8.5fr_3.5fr] gap-8 mt-6">
           <div className="grid grid-cols-1 antialiased gap-6 text-white/80 text-xl md:text-2xl">
             <AnimatedBody className="leading-[34px] md:leading-[39px]">
-              I&apos;m a Software Engineer with 3+ years of experience,
-              passionate about building robust, scalable, and user-friendly
-              applications. I specialize in modern frameworks like React.js,
-              Next.js, and Golang to create solutions that empower businesses to
-              grow and thrive.
+              I&apos;m a Software Engineer with years of experience, passionate
+              about building robust, scalable, and user-friendly applications. I
+              specialize in modern frameworks like React.js, Next.js, and Golang
+              to create solutions that empower businesses to grow and thrive.
             </AnimatedBody>
             <AnimatedBody className="leading-[34px] md:leading-[39px]">
               From designing dynamic websites to developing efficient tools that
@@ -229,10 +228,7 @@ export default function Home() {
               with users, and drive measurable impact—helping businesses evolve
               from where they are today to their ultimate goals and beyond.
               Wanna learn more? Here&apos;s <br className="hidden md:block" />
-              <Link
-                className="underline"
-                href={"https://akeemkabiru.tiiny.site"}
-              >
+              <Link className="underline" href="/resume.pdf" download={true}>
                 my résumè
               </Link>
               .
