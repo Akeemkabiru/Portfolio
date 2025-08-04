@@ -108,7 +108,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {" "}
         <ViewProvider>
           <main>{children}</main>
         </ViewProvider>
