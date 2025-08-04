@@ -14,18 +14,21 @@ import TimelineItem from "@/components/work/timeline";
 import AnimatedTitle from "@/components/ui/animatedTitle";
 import { Syne } from "next/font/google";
 
-const syne = Syne({ subsets: ["latin"] });
+const syne = Syne({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
-  title: "Kabiru Akeem Next.js Developer ",
+  title: "Kabiru Akeem – Software Engineer | Next.js, TypeScript, Node.js",
   description:
-    "Kabiru Akeem is a full-stack web developer specializing in Next.js, UI/UX, and high-performance apps. View portfolio and hire me for freelance or contract work.",
+    "Kabiru Akeem is a software engineer specializing in building scalable, high-performance web applications using Next.js, TypeScript, Node.js, and modern web technologies.",
   keywords:
-    "Next.js Developer, Freelance Developer, Frontend Engineer, Web Developer Portfolio, React, TypeScript, Tailwind, Kabiru Akeem",
+    "Kabiru Akeem, Software Engineer, Next.js Developer, TypeScript Developer, Node.js Developer, Full-Stack Engineer, Express.js, Web Application Development, JavaScript, React, Backend Developer, Frontend Developer, Kabiru Akeem Portfolio",
   openGraph: {
-    title: "Kabiru Akeem Next.js Developer ",
+    title: "Kabiru Akeem – Software Engineer | Next.js, TypeScript, Node.js",
     description:
-      "Discover my work as a software engineer building web applications with a focus on performance, accessibility, and user experience.",
+      "Explore the professional portfolio of Kabiru Akeem, a software engineer focused on performance, clean architecture, and user-centric design with technologies like Next.js, Node.js, and TypeScript.",
     url: "https://www.kabby.pro",
     siteName: "Kabby Pro",
     type: "website",
@@ -33,9 +36,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kabiru Akeem Next.js Developer ",
+    title: "Kabiru Akeem – Software Engineer | Next.js, TypeScript, Node.js",
     description:
-      "Portfolio of Kabiru Akeem, showcasing web & mobile app projects built with Next.js, React, TypeScript, and more.",
+      "Discover projects and code insights from Kabiru Akeem, a software engineer who builds modern, scalable web apps using Next.js, TypeScript, and Node.js.",
     creator: "@kabbydev",
   },
 };
@@ -106,7 +109,7 @@ export default function Home() {
               alt="kabby"
               className="rounded-2xl shadow-lg mb-6 border-2 p-1 border-[#548FBA] md:hidden"
               quality={100}
-              priority
+              loading="lazy"
             />
           </motion.div>
 
