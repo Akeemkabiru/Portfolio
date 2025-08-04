@@ -48,6 +48,11 @@ export default function Home() {
     rootMargin: "-100px 0px",
   });
 
+  const { ref: navRef, inView: heroInview } = useInView({
+    threshold: 0,
+    rootMargin: "-100px 0px",
+  });
+
   useEffect(() => {
     if (inView) {
       setSectionInView("home");
@@ -56,26 +61,23 @@ export default function Home() {
   }, [inView, setSectionInView]);
 
   return (
-    <main className="lg:px-16 md:px-8 px-4 py-8">
-      <nav className="flex items-center justify-center w-full px-4 mb-16 md:mb-0">
-        <div className="flex items-center gap-x-6 bg-white/20 py-4 px-8 rounded-2xl backdrop-blur-lg fixed z-[100] top-6">
-          {NAVBAR_ITEMS.map(({ title, id }) => (
-            <Link
-              href={id}
-              key={id}
-              className="hover:underline-offset-1 hover:underline font-medium underline:text-red-500"
-            >
-              {title}
-            </Link>
-          ))}
-        </div>
+    <main className="lg:px-16 md:px-8 px-6">
+      <nav
+        className={`flex items-center justify-center z-[100] md:w-fit w-full  mx-auto px-6 py-4 gap-x-8 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 bg-gray-400 rounded-b-3xl  transition-transform  duration-300 ease-in-out
+ `}
+      >
+        {NAVBAR_ITEMS.map(({ title, id }) => (
+          <Link href={id} key={id}>
+            {title}
+          </Link>
+        ))}
       </nav>
 
       {/* hero */}
       <section
         className="flex flex-col sm:flex-row lg:h-dvh items-center gap-6 sm:justify-between mb-8 pt-12"
         id="home"
-        ref={ref}
+        ref={navRef}
       >
         <div>
           <motion.div animate={imageAnimation}>
