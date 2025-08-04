@@ -16,6 +16,30 @@ import { Syne } from "next/font/google";
 
 const syne = Syne({ subsets: ["latin"] });
 
+export const metadata = {
+  title: "Kabiru Akeem Next.js Developer ",
+  description:
+    "Kabiru Akeem is a full-stack web developer specializing in Next.js, UI/UX, and high-performance apps. View portfolio and hire me for freelance or contract work.",
+  keywords:
+    "Next.js Developer, Freelance Developer, Frontend Engineer, Web Developer Portfolio, React, TypeScript, Tailwind, Kabiru Akeem",
+  openGraph: {
+    title: "Kabiru Akeem Next.js Developer ",
+    description:
+      "Discover my work as a software engineer building web applications with a focus on performance, accessibility, and user experience.",
+    url: "https://www.kabby.pro",
+    siteName: "Kabby Pro",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kabiru Akeem Next.js Developer ",
+    description:
+      "Portfolio of Kabiru Akeem, showcasing web & mobile app projects built with Next.js, React, TypeScript, and more.",
+    creator: "@kabbydev",
+  },
+};
+
 export default function Home() {
   const [formDisplay, setFormDisplay] = useState<boolean>(false);
   const [viewCount, setViewCount] = useState<number>(0);

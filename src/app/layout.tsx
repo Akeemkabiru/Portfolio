@@ -42,14 +42,73 @@ export const metadata: Metadata = {
   },
 };
 
+// app/layout.tsx
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Kabby Pro",
+              url: "https://www.kabby.pro",
+              description:
+                "Freelance Next.js developer and UI/UX designer portfolio.",
+              publisher: {
+                "@type": "Person",
+                name: "Kabby",
+                url: "https://www.kabby.pro",
+              },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://www.kabby.pro/search?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Kabby",
+              url: "https://www.kabby.pro",
+              sameAs: [
+                "https://github.com/kabby",
+                "https://www.linkedin.com/in/kabby",
+                "https://twitter.com/kabby",
+              ],
+              jobTitle: "Freelance Web Developer",
+              worksFor: {
+                "@type": "Organization",
+                name: "Kabby Pro",
+              },
+              alumniOf: {
+                "@type": "CollegeOrUniversity",
+                name: "Your University Name",
+              },
+              knowsAbout: [
+                "Next.js",
+                "React",
+                "UI/UX Design",
+                "Frontend Development",
+                "Full Stack Web Development",
+              ],
+            }),
+          }}
+        />
+      </head>
       <body>
+        {" "}
         <ViewProvider>
           <main>{children}</main>
         </ViewProvider>
