@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.kabby.pro
+
+# Sitemaps
+Sitemap: https://www.kabby.pro/sitemap.xml
