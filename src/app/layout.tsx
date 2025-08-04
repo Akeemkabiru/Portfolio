@@ -7,21 +7,25 @@ export const metadata: Metadata = {
   description:
     "Hire a freelance web developer and UI/UX expert building modern, fast‑loading Next.js applications. See full stack projects and portfolio case studies.",
   keywords: [
-    "freelance web developer",
     "web development services",
     "frontend development",
     "full stack development",
     "Next.js developer",
     "web developer portfolio",
     "web design and development",
-    "UI UX developer",
+    "Backend Developer",
+    "Backend Developement",
+    "React Developer",
+    "Typescript",
+    "Website Designers",
   ],
   openGraph: {
-    title: "Kabby | Freelance Next.js Developer & UI/UX Portfolio",
+    title:
+      "Kabby | Next.js, Express.js, Typescript, Fullstack Developer, Software Engineer Portfolio",
     description:
-      "Explore a modern freelance portfolio built with Next.js. Full stack web developer delivering responsive UI/UX design for startups and brands.",
+      "Explore a modern software engineer portfolio built with Next.js, Typescript and Framermotion. Full stack web developer delivering responsive UI/UX design for startups and brands.",
     url: "https://www.kabby.pro",
-    siteName: "Kabby Pro",
+    siteName: "Kabby",
     images: [
       {
         url: "https://www.kabby.pro/og-image.jpg",
@@ -35,9 +39,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kabby | Freelance Web Developer & UI/UX Expert",
+    title:
+      "Kabby | Software Engineer | Fullstack Developer | Backend Developer | Frontend Developer",
     description:
-      "Modern full-stack web developer portfolio using Next.js and React. View case studies and contact to hire.",
+      "Modern full-stack web developer portfolio using Next.js and Typescript. View case studies and contact to hire.",
     images: ["https://www.kabby.pro/og-image.jpg"],
   },
 };
@@ -57,10 +62,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "Kabby Pro",
+              name: "Kabby",
               url: "https://www.kabby.pro",
               description:
-                "Freelance Next.js developer and UI/UX designer portfolio.",
+                "Software Engineer, Fullstack Developer, Frontend Developer, Backend Developer Developer Portfolio.",
               publisher: {
                 "@type": "Person",
                 name: "Kabby",
@@ -83,24 +88,29 @@ export default function RootLayout({
               name: "Kabby",
               url: "https://www.kabby.pro",
               sameAs: [
-                "https://github.com/kabby",
-                "https://www.linkedin.com/in/kabby",
-                "https://twitter.com/kabby",
+                "https://github.com/akeemkabiru",
+                "https://www.linkedin.com/in/kabiruakeem",
+                "https://twitter.com/kabiruakem",
               ],
-              jobTitle: "Freelance Web Developer",
+              jobTitle: "Fullstack | Frontend | Backend Web Developer",
               worksFor: {
                 "@type": "Organization",
-                name: "Kabby Pro",
+                name: "Kabby",
               },
               alumniOf: {
                 "@type": "CollegeOrUniversity",
-                name: "Your University Name",
+                name: "Obafemi Awolowo University",
               },
               knowsAbout: [
                 "Next.js",
                 "React",
-                "UI/UX Design",
+                "Express.js",
+                "Node.js",
+                "Typescript",
+                "MongoDB",
+                "SQL Database",
                 "Frontend Development",
+                "Backend Development",
                 "Full Stack Web Development",
               ],
             }),

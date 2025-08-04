@@ -1,7 +1,8 @@
 import Home from "@/components/main";
 
 export const metadata = {
-  title: "Kabiru Akeem – Software Engineer | Next.js, TypeScript, Node.js",
+  title:
+    "Kabiru Akeem – Software Engineer | Next.js, TypeScript, Node.js, Express.js",
   description:
     "Kabiru Akeem is a software engineer specializing in building scalable, high-performance web applications using Next.js, TypeScript, Node.js, and modern web technologies.",
   keywords:
@@ -11,7 +12,7 @@ export const metadata = {
     description:
       "Explore the professional portfolio of Kabiru Akeem, a software engineer focused on performance, clean architecture, and user-centric design with technologies like Next.js, Node.js, and TypeScript.",
     url: "https://www.kabby.pro",
-    siteName: "Kabby Pro",
+    siteName: "Kabby",
     type: "website",
     locale: "en_US",
     images: [
@@ -19,7 +20,7 @@ export const metadata = {
         url: "https://www.kabby.pro/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Kabiru Akeem – Software Engineer Portfolio",
+        alt: "Kabiru Akeem – Software Engineer, Frontend Developer, Fullstack Developer, Backend Developer Portfolio",
       },
     ],
   },
