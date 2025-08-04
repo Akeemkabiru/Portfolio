@@ -7,22 +7,18 @@ import { useInView } from "react-intersection-observer";
 import { useView } from "@/context";
 import AnimatedBody from "@/components/ui/animatedBody";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Title from "@/components/ui/title";
 import Card from "@/components/project-card";
 import TimelineItem from "@/components/work/timeline";
 import AnimatedTitle from "@/components/ui/animatedTitle";
 import { Syne } from "next/font/google";
-import { useForm } from "react-hook-form";
 
 const syne = Syne({ subsets: ["latin"] });
 
 export default function Home() {
   const [formDisplay, setFormDisplay] = useState<boolean>(false);
   const [viewCount, setViewCount] = useState<number>(0);
-  const formRef = useRef<HTMLFormElement>(null);
-  const { formState, register } = useForm();
-  const { errors } = formState;
   const { setSectionInView } = useView();
   const curYear = new Date().getFullYear();
 
@@ -48,11 +44,6 @@ export default function Home() {
     rootMargin: "-100px 0px",
   });
 
-  const { ref: navRef, inView: heroInview } = useInView({
-    threshold: 0,
-    rootMargin: "-100px 0px",
-  });
-
   useEffect(() => {
     if (inView) {
       setSectionInView("home");
@@ -61,13 +52,17 @@ export default function Home() {
   }, [inView, setSectionInView]);
 
   return (
-    <main className="lg:px-16 md:px-8 px-6">
+    <main className="lg:px-16 md:px-12 px-6">
       <nav
-        className={`flex items-center justify-center z-[100] md:w-fit w-full  mx-auto px-6 py-4 gap-x-8 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 bg-gray-400 rounded-b-3xl  transition-transform  duration-300 ease-in-out
- `}
+        className={`flex items-center justify-center z-[100] md:w-fit w-full  mx-auto px-6 py-4 md:gap-x-8 gap-x-4 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 bg-gray-400 rounded-b-3xl transition-all  duration-300 ease-in-out
+  `}
       >
         {NAVBAR_ITEMS.map(({ title, id }) => (
-          <Link href={id} key={id}>
+          <Link
+            href={id}
+            key={id}
+            className="hover:text-slate-500 focus:text-slate-500 transition-colors duration-300"
+          >
             {title}
           </Link>
         ))}
@@ -77,7 +72,6 @@ export default function Home() {
       <section
         className="flex flex-col sm:flex-row lg:h-dvh items-center gap-6 sm:justify-between mb-8 pt-12"
         id="home"
-        ref={navRef}
       >
         <div>
           <motion.div animate={imageAnimation}>
@@ -86,7 +80,7 @@ export default function Home() {
               width={100}
               height={100}
               alt="kabby"
-              className="rounded-lg shadow-lg mb-6 border-2 border-[#548FBA] md:hidden"
+              className="rounded-2xl shadow-lg mb-6 border-2 p-1 border-[#548FBA] md:hidden"
               quality={100}
               priority
             />
@@ -128,57 +122,53 @@ export default function Home() {
             <p>a Software Engineer</p>
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.8, ease: easeInOut }}
-            className="text-white/40 text-xl smm:text-2xl lg:text-3xl xl:text-4xl mt-3 smm:mt-6 md:w-[65%]"
+          <AnimatedTitle
+            wordSpace={"mr-[12px]"}
+            charSpace={"mr-[0.001em]"}
+            className={`text-white/40 text-xl smm:text-2xl lg:text-3xl xl:text-4xl mt-3 smm:mt-6 md:w-[65%] font-medium opacity-80`}
           >
             Specialize in building intuitive, high-performance web and mobile
             applications.
-          </motion.p>
+          </AnimatedTitle>
         </div>
 
         <motion.div
-          className="md:flex items-center justify-center hidden"
-          animate={imageAnimation}
+          transition={{ type: "spring", stiffness: 200, damping: 20 }}
+          className="md:flex items-center justify-center hidden border p-2 rounded-2xl border-[#548FBA]"
         >
           <Image
             src="/kabby.jpeg"
             width={500}
             height={500}
             alt="kabby"
-            className="w-[500px] rounded-lg shadow-lg"
+            className="w-[500px] rounded-2xl shadow-lg"
             quality={100}
             priority
           />
         </motion.div>
       </section>
 
-      <section
-        className="flex flex-col gap-6 md:gap-10 mb-16"
-        ref={ref}
-        id="work"
-      >
+      <section className="flex flex-col gap-6 md:gap-10 mb-16" id="work">
         <Title>Projects</Title>
-        {PROJECTS.map(
-          (
-            { picture, title, description, stacks, link, gitLink },
-            index: number
-          ) => {
-            return (
-              <Card
-                key={index}
-                picture={picture}
-                title={title}
-                description={description}
-                stacks={stacks}
-                link={link}
-                gitLink={gitLink}
-              />
-            );
-          }
-        )}
+        <div className="grid lg:grid-cols-3 gap-6">
+          {PROJECTS.map(
+            (
+              { picture, title, description, stacks, gitLink },
+              index: number
+            ) => {
+              return (
+                <Card
+                  key={index}
+                  picture={picture}
+                  title={title}
+                  description={description}
+                  stacks={stacks}
+                  gitLink={gitLink}
+                />
+              );
+            }
+          )}
+        </div>
       </section>
 
       <section className="mb-16">
@@ -215,26 +205,27 @@ export default function Home() {
             <AnimatedBody className="leading-[34px] md:leading-[39px]">
               I&apos;m a Software Engineer with years of experience, passionate
               about building robust, scalable, and user-friendly applications. I
-              specialize in modern frameworks like React.js, Next.js, and Golang
-              to create solutions that empower businesses to grow and thrive.
+              create solutions that empower businesses to grow and thrive.
             </AnimatedBody>
             <AnimatedBody className="leading-[34px] md:leading-[39px]">
               From designing dynamic websites to developing efficient tools that
               automate processes, I focus on delivering clean, high-performance
-              code that addresses real-world business needs. I thrive on
-              collaboration, innovation, and solving unique challenges to create
-              software that exceeds expectations.
+              code that addresses real-world business needs.
             </AnimatedBody>
             <AnimatedBody className="inline leading-[34px] md:leading-[39px]">
               My goal is to craft solutions that reflect your vision, resonate
-              with users, and drive measurable impact—helping businesses evolve
+              with users, and drive measurable impact helping businesses evolve
               from where they are today to their ultimate goals and beyond.
-              Wanna learn more? Here&apos;s <br className="hidden md:block" />
-              <Link className="underline" href="/resume.pdf" download={true}>
-                my résumè
-              </Link>
-              .
             </AnimatedBody>
+
+            <Link
+              className="font-semibold px-4 py-2 md:px-3 lg:py-4 rounded-xl border-2 border-white leading-none w-fit"
+              href="/kabiruakeem-cv.pdf"
+              download={true}
+              target="_blank"
+            >
+              my resume
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 gap-4">
@@ -323,7 +314,8 @@ export default function Home() {
               </Link>
             </div>
             <Link href="#footer">
-              <button
+              <Link
+                href="mailto:kabbydev@gmail.com"
                 className={`text-base ml-auto mt-6 lg:mt-0 lg:ml-0 block sm:hidden lg:block lg:text-2xl font-semibold px-4 py-2 md:px-3 lg:py-4 rounded-xl border-2 border-white leading-none ${
                   viewCount <= 1 && "duration-500 delay-[1500ms]"
                 } ${
@@ -332,116 +324,13 @@ export default function Home() {
                     : "opacity-0 translate-y-16"
                 }`}
                 data-blobity-radius="12"
-                onClick={() => {
-                  setFormDisplay(!formDisplay);
-                }}
               >
                 CONTACT&nbsp;ME
-              </button>
+              </Link>
             </Link>
           </div>
         ) : (
-          <AnimatePresence>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              exit={{ opacity: 0 }}
-              style={{
-                transform: `${
-                  formDisplay
-                    ? "perspective(300px) rotateY(-180deg)"
-                    : "perspective(300px) rotateY(0deg)"
-                }`,
-              }}
-              className="w-full"
-            >
-              <div className="flex items-center h-full gap-2 w-full">
-                <form
-                  ref={formRef}
-                  className={`back w-full flex flex-col gap-3 grow-[2] basis-0`}
-                >
-                  <div className="flex gap-1 flex-col">
-                    <label
-                      htmlFor="userName"
-                      className="opacity-70 text-sm lg:text-base "
-                    >
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="userName"
-                      {...register("userName", {
-                        required: "I need to know your name",
-                        pattern: {
-                          value: /^[a-zA-Z][a-zA-Z0-9]{2,}/,
-                          message: "Please enter a valid name.",
-                        },
-                      })}
-                      className="bg-transparent rounded-md border border-[#737373c4] focus:border-[#9f9d9dc4] outline-none py-1 pl-2"
-                    />
-                    {errors?.userName && (
-                      <span className="text-red-400 text-xs">
-                        {errors?.userName?.message as string}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex gap-1 flex-col">
-                    <label
-                      htmlFor="userEmail"
-                      className="opacity-70 text-sm lg:text-base "
-                    >
-                      Email
-                    </label>
-                    <input
-                      id="userEmail"
-                      type="email"
-                      {...register("userEmail", {
-                        required: "Enter a correct email address",
-                        pattern: {
-                          value: /\S+@\S+\.\S+/,
-                          message: "Please provide a valid email address",
-                        },
-                      })}
-                      className="bg-transparent rounded-md border border-[#737373c4] focus:border-[#9f9d9dc4] outline-none py-1 pl-2"
-                    />
-                    {errors?.userEmail && (
-                      <span className="text-red-400 text-xs">
-                        {errors?.userEmail?.message as string}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex gap-1 flex-col">
-                    <label
-                      htmlFor="userMessage"
-                      className="opacity-70 text-sm lg:text-base"
-                    >
-                      Message
-                    </label>
-                    <textarea
-                      id="userMessage"
-                      {...register("userMessage", {
-                        required: "I'll appreciate what you have to say.",
-                      })}
-                      rows={4}
-                      cols={50}
-                      className="bg-transparent rounded-md border border-[#737373c4] focus:border-[#9f9d9dc4] outline-none py-1 pl-2"
-                    />
-                    {errors?.userMessage && (
-                      <span className="text-red-400 text-xs">
-                        {errors?.userMessage?.message as string}
-                      </span>
-                    )}
-                  </div>
-                  <button
-                    className={`rounded-md bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] py-3 px-5 ${syne.className} font-bold uppercase mt-4`}
-                  >
-                    Send
-                  </button>
-                </form>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+          <AnimatePresence></AnimatePresence>
         )}
       </section>
 
@@ -475,11 +364,8 @@ export default function Home() {
             <path d="M18 11l-6-6-6 6" />
             <path d="M18 7l-6-6-6 6" />
           </svg>
-
-          {/* <p className="underline leading-tight">SCROLL TO TOP</p> */}
         </Link>
       </section>
-      <section className="px-4 md:px-10 lg:px-16 pt-32 lg:pt-16 space-y-16"></section>
     </main>
   );
 }

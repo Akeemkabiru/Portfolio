@@ -1,10 +1,10 @@
 import { ICard } from "@/components/project-card";
 
 export const NAVBAR_ITEMS = [
-  { title: "Home", id: "/" },
-  { title: "Work", id: "#" },
-  { title: "About", id: "#about" },
-  { title: "Contact", id: "#contact" },
+  { title: "Projects", id: "projects" },
+  { title: "Experiences", id: "experiences" },
+  { title: "Blogs", id: "blogs" },
+  { title: "Contact", id: "contact" },
 ];
 
 export const PROJECTS: ICard[] = [
@@ -16,8 +16,7 @@ export const PROJECTS: ICard[] = [
     stacks: [
       "Nextjs",
       "Typescript",
-      "Tailwind CSS",
-      "Material UI",
+      "Tailwind",
       "React Query",
       "React Form Hook",
     ],
@@ -29,7 +28,7 @@ export const PROJECTS: ICard[] = [
     title: "Haptle Technologies",
     description:
       "Haptle is dedicated to revolutionizing the way events are organized and experienced. The platform connects you with vetted and reliable vendors for all your needs, ensuring that your event is a success.",
-    stacks: ["Nextjs", "Typescript", "Tailwind CSS", "Formik", "Zustand"],
+    stacks: ["Nextjs", "Typescript", "Tailwind", "Formik", "Zustand"],
     gitLink: "",
     link: "https://www.haptle.com/",
   },
@@ -38,7 +37,7 @@ export const PROJECTS: ICard[] = [
     title: "AI Powered Recipe App",
     description:
       "Receitas is a cutting-edge recipe recommendation app powered by artificial intelligence. Built using the modern web framework Next.js.An intuitive user interface to help you plan, and cook meals.",
-    stacks: ["Nextjs", "Typescript", "Tailwind CSS", "Zustand"],
+    stacks: ["Nextjs", "Typescript", "Tailwind", "Zustand"],
     gitLink: "https://github.com/Akeemkabiru/personalised-recipe",
     link: "https://personalised-recipe.vercel.app/",
   },
@@ -47,7 +46,7 @@ export const PROJECTS: ICard[] = [
     title: "Globetrek App",
     description:
       "A world map that tracks your footsteps into every city you can think of. Never forget your wonderful experiences, and show your friends how you have wandered the world.",
-    stacks: ["Nextjs", "Typescript", "Tailwind CSS", "Zustand"],
+    stacks: ["Nextjs", "Typescript", "Tailwind", "Zustand"],
     gitLink: "https://github.com/Akeemkabiru/personalised-recipe",
     link: "https://personalised-recipe.vercel.app/",
   },
