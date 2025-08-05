@@ -249,7 +249,7 @@ export default function Home() {
 
             <Link
               href="/kabiruakeem-cv.pdf"
-              className={`text-base ml-auto mt-6 lg:mt-0 lg:ml-0 block sm:hidden lg:block lg:text-2xl font-semibold px-4 py-2 md:px-3 lg:py-4 rounded-xl border-2 border-white text-white uppercase leading-none ${
+              className={`text-base ml-auto mt-6 lg:mt-0 lg:ml-0 block sm:hidden lg:block lg:text-2xl font-semibold px-4 py-2 md:px-3 lg:py-4 rounded-xl border-2 border-white h-fit text-white uppercase leading-none w-fit ${
                 viewCount <= 1 && "duration-500 delay-[1500ms]"
               } ${
                 hasBeenInView
