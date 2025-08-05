@@ -2,12 +2,12 @@
 
 import { EXPERIENCE, NAVBAR_ITEMS, PROJECTS } from "@/utils/constant";
 import Image from "next/image";
-import { motion, easeInOut, AnimatePresence } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useView } from "@/context";
 import AnimatedBody from "@/components/ui/animatedBody";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Title from "@/components/ui/title";
 import Card from "@/components/project-card";
 import TimelineItem from "@/components/work/timeline";
@@ -20,10 +20,14 @@ const syne = Syne({
 });
 
 export default function Home() {
-  const [formDisplay, setFormDisplay] = useState<boolean>(false);
   const [viewCount, setViewCount] = useState<number>(0);
+  const [hasBeenInView, setHasBeenInView] = useState<boolean>(false);
+  const [isNavFixed, setIsNavFixed] = useState<boolean>(false);
+
   const { setSectionInView } = useView();
   const curYear = new Date().getFullYear();
+
+  const heroRef = useRef<HTMLElement | null>(null);
 
   const handWaveAnimation = {
     rotate: [0, 15, -10, 15, -10, 15, -10, 15, -10, 15, 0],
@@ -51,30 +55,52 @@ export default function Home() {
     if (inView) {
       setSectionInView("home");
       setViewCount((prev) => prev + 1);
+      setHasBeenInView(true);
     }
   }, [inView, setSectionInView]);
 
-  return (
-    <main className="lg:px-16 md:px-12 px-6">
-      <nav
-        className={`flex items-center justify-center z-[100] md:w-fit w-full  mx-auto px-6 py-4 md:gap-x-8 gap-x-4 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 bg-gray-400 rounded-b-3xl transition-all  duration-300 ease-in-out
-  `}
-      >
-        {NAVBAR_ITEMS.map(({ title, id }) => (
-          <Link
-            href={id}
-            key={id}
-            className="hover:text-slate-500 focus:text-slate-500 transition-colors duration-300"
-          >
-            {title}
-          </Link>
-        ))}
-      </nav>
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = "smooth";
+  }, []);
 
-      {/* hero */}
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroBottom = heroRef.current.getBoundingClientRect().bottom;
+        setIsNavFixed(heroBottom <= 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <main id="home" className="lg:px-16 md:px-12 px-6 scroll-smooth">
+      {/* Navbar */}
+      <div className="flex items-center justify-center">
+        <nav
+          className={`${
+            isNavFixed ? "fixed top-0 transform" : "relative"
+          } flex items-center justify-center z-[100]  mx-auto px-6 py-4 md:gap-x-8 gap-x-4 bg-clip-padding backdrop-filter bg-opacity-30 bg-gray-400 rounded-b-3xl transition-all duration-900 ease-in-out backdrop-blur`}
+        >
+          {NAVBAR_ITEMS.map(({ title, id, href }) => (
+            <Link
+              href={href || id}
+              key={id}
+              target={href ? "_blank" : "_self"}
+              className="hover:text-slate-500 focus:text-slate-500 transition-colors duration-300"
+            >
+              {title}
+            </Link>
+          ))}
+        </nav>
+      </div>
+
+      {/* Hero Section */}
       <section
+        ref={heroRef}
         className="flex flex-col sm:flex-row lg:h-dvh items-center gap-6 sm:justify-between mb-8 pt-12"
-        id="home"
       >
         <div>
           <motion.div animate={imageAnimation}>
@@ -112,6 +138,7 @@ export default function Home() {
               />
             </motion.div>
           </motion.div>
+
           <motion.h1
             className="text-[32px] smm:text-[40px] md:text-5xl lg:text-6xl xl:text-7xl leading-tight font-bold"
             initial={{ opacity: 0 }}
@@ -151,30 +178,30 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section className="flex flex-col gap-6 md:gap-10 mb-16" id="work">
+      {/* Projects Section */}
+      <section className="flex flex-col gap-6 md:gap-10 mb-16" id="projects">
         <Title>Projects</Title>
         <div className="grid lg:grid-cols-3 gap-6">
           {PROJECTS.map(
             (
               { picture, title, description, stacks, gitLink },
               index: number
-            ) => {
-              return (
-                <Card
-                  key={index}
-                  picture={picture}
-                  title={title}
-                  description={description}
-                  stacks={stacks}
-                  gitLink={gitLink}
-                />
-              );
-            }
+            ) => (
+              <Card
+                key={index}
+                picture={picture}
+                title={title}
+                description={description}
+                stacks={stacks}
+                gitLink={gitLink}
+              />
+            )
           )}
         </div>
       </section>
 
-      <section className="mb-16">
+      {/* Experience Section */}
+      <section id="experiences" className="mb-16">
         <Title> Work experience</Title>
         <div className="flex mt-6 gap-4 pl-3">
           <div className="w-3 h-auto bg-gradient-to-b from-white to-transparent" />
@@ -194,6 +221,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Section */}
       <section ref={ref} className="" id="about">
         <AnimatedTitle
           wordSpace={"mr-[14px]"}
@@ -207,8 +235,7 @@ export default function Home() {
           <div className="grid grid-cols-1 antialiased gap-6 text-white/80 text-xl md:text-2xl">
             <AnimatedBody className="leading-[34px] md:leading-[39px]">
               I&apos;m a Software Engineer with years of experience, passionate
-              about building robust, scalable, and user-friendly applications. I
-              create solutions that empower businesses to grow and thrive.
+              about building robust, scalable, and user-friendly applications.
             </AnimatedBody>
             <AnimatedBody className="leading-[34px] md:leading-[39px]">
               From designing dynamic websites to developing efficient tools that
@@ -217,17 +244,22 @@ export default function Home() {
             </AnimatedBody>
             <AnimatedBody className="inline leading-[34px] md:leading-[39px]">
               My goal is to craft solutions that reflect your vision, resonate
-              with users, and drive measurable impact helping businesses evolve
-              from where they are today to their ultimate goals and beyond.
+              with users, and drive measurable impact.
             </AnimatedBody>
 
             <Link
-              className="font-semibold px-4 py-2 md:px-3 lg:py-4 rounded-xl border-2 border-white leading-none w-fit"
               href="/kabiruakeem-cv.pdf"
-              download={true}
+              className={`text-base ml-auto mt-6 w-fit lg:mt-0 lg:ml-0 block sm:hidden lg:block lg:text-2xl font-semibold px-4 py-2 md:px-3 lg:py-4 rounded-xl border-2 border-white leading-none uppercase text-white ${
+                syne.className
+              } ${viewCount <= 1 && "duration-500 delay-[1500ms]"} ${
+                hasBeenInView
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-16"
+              }`}
+              data-blobity-radius="12"
               target="_blank"
             >
-              my resume
+              View resume
             </Link>
           </div>
 
@@ -241,8 +273,8 @@ export default function Home() {
                 Frontend Tools
               </AnimatedTitle>
               <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
-                Typescript, Javascript Reactjs, Nextjs, Redux, RTK, React Query,
-                HTML5, Zustand, Golang, Git & Github, Formik, React Form Hook
+                Typescript, Javascript, Reactjs, Nextjs, Redux, RTK, React
+                Query, HTML5, Zustand, Git & Github, Formik, React Hook Form
               </AnimatedBody>
             </div>
             <div>
@@ -255,10 +287,9 @@ export default function Home() {
               </AnimatedTitle>
               <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
                 CSS3/SCSS/SASS, Tailwind CSS, Styled Components, Chakra UI,
-                Framer Motion, Bootstrap, ReCharts.
+                Framer Motion, Bootstrap, ReCharts, Material UI.
               </AnimatedBody>
             </div>
-
             <div>
               <AnimatedTitle
                 wordSpace={"mr-[0.5ch]"}
@@ -268,75 +299,48 @@ export default function Home() {
                 Backend Tools
               </AnimatedTitle>
               <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
-                Node.js, Express.js, MongoDB, Mongoose, RESTful APIs, JWT &
-                OAuth2, Bcrypt, TypeScript, Golang, Redis, WebSockets, CI/CD,
+                Node.js, Express.js, Golang, MongoDB, Mongoose, RESTful APIs,
+                JWT & OAuth2, Bcrypt, Redis, WebSockets, CI/CD
               </AnimatedBody>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Contact Section */}
       <section
         ref={ref}
         id="contact"
-        style={{
-          transform: `${
-            formDisplay
-              ? "perspective(300px) rotateY(-180deg)"
-              : "perspective(300px) rotateY(-360deg)"
-          }`,
-        }}
         className={`overflow-y-hidden card mt-12 sm:mt-16 md:mt-[100px] px-6 py-4 md:py-10 lg:py-12 flex flex-col lg:items-center lg:flex-row justify-between rounded-2xl bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f]`}
       >
-        {!formDisplay ? (
-          <div
-            className={` ${
-              syne.className
-            } flex justify-between items-center w-full duration-1000 ${
-              formDisplay && "opacity-0"
-            }`}
+        <div
+          className={` ${syne.className} flex justify-between items-center w-full duration-1000 `}
+        >
+          <AnimatedTitle
+            wordSpace={"mr-2 md:mr-[12px]"}
+            charSpace={"mr-[0.001em]"}
+            className="text-xl sm:text-2xl md:text-[32px] lg:text-[40px] font-bold"
           >
-            <div className="inline w-full">
-              <AnimatedTitle
-                wordSpace={"mr-2 md:mr-[12px]"}
-                charSpace={"mr-[0.001em]"}
-                className="text-xl sm:text-2xl md:text-[32px] lg:text-[40px] font-bold"
-              >
-                GOT A PROJECT IN MIND?
-              </AnimatedTitle>
-              <Link href="#footer" data-no-blobity>
-                <span
-                  data-blobity
-                  onClick={() => {
-                    setFormDisplay(!formDisplay);
-                  }}
-                  className="sm:mt-0 text-xl sm:text-2xl md:text-[32px] w-fit underline lg:text-[40px] font-bold leading-tight hidden sm:block lg:hidden"
-                >
-                  CONTACT ME
-                </span>
-              </Link>
-            </div>
-            <Link href="#footer">
-              <Link
-                href="mailto:kabbydev@gmail.com"
-                className={`text-base ml-auto mt-6 lg:mt-0 lg:ml-0 block sm:hidden lg:block lg:text-2xl font-semibold px-4 py-2 md:px-3 lg:py-4 rounded-xl border-2 border-white leading-none ${
-                  viewCount <= 1 && "duration-500 delay-[1500ms]"
-                } ${
-                  inView
-                    ? " opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-16"
-                }`}
-                data-blobity-radius="12"
-              >
-                CONTACT&nbsp;ME
-              </Link>
-            </Link>
-          </div>
-        ) : (
-          <AnimatePresence></AnimatePresence>
-        )}
+            GOT A PROJECT IN MIND?
+          </AnimatedTitle>
+
+          <Link
+            href="mailto:kabbydev@gmail.com"
+            className={`text-base ml-auto mt-6 lg:mt-0 lg:ml-0 block sm:hidden lg:block lg:text-2xl font-semibold px-4 py-2 md:px-3 lg:py-4 rounded-xl border-2 border-white leading-none ${
+              viewCount <= 1 && "duration-500 delay-[1500ms]"
+            } ${
+              hasBeenInView
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-16"
+            }`}
+            data-blobity-radius="12"
+          >
+            CONTACT&nbsp;ME
+          </Link>
+        </div>
       </section>
 
+      {/* Footer */}
       <section
         id="footer"
         className="my-6 sm:my-8 text-sm sm:text-base lg:text-lg flex md:justify-between justify-center"
