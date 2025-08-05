@@ -35,5 +35,9 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <Home />;
+  return (
+    <main className="container mx-auto lg:max-w-full 2xl:max-w-7xl">
+      <Home />
+    </main>
+  );
 }
