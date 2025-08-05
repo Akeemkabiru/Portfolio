@@ -249,15 +249,14 @@ export default function Home() {
 
             <Link
               href="/kabiruakeem-cv.pdf"
-              className={`text-base ml-auto mt-6 w-fit lg:mt-0 lg:ml-0 block sm:hidden lg:block lg:text-2xl font-semibold px-4 py-2 md:px-3 lg:py-4 rounded-xl border-2 border-white leading-none uppercase text-white ${
-                syne.className
-              } ${viewCount <= 1 && "duration-500 delay-[1500ms]"} ${
+              className={`text-base ml-auto mt-6 lg:mt-0 lg:ml-0 block sm:hidden lg:block lg:text-2xl font-semibold px-4 py-2 md:px-3 lg:py-4 rounded-xl border-2 border-white text-white uppercase leading-none ${
+                viewCount <= 1 && "duration-500 delay-[1500ms]"
+              } ${
                 hasBeenInView
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 -translate-x-16"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-16"
               }`}
               data-blobity-radius="12"
-              target="_blank"
             >
               View resume
             </Link>
