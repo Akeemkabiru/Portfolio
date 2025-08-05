@@ -3,27 +3,29 @@ import "./globals.css";
 import { ViewProvider } from "@/context";
 
 export const metadata: Metadata = {
-  title: "Kabby | Freelance Next.js Developer & UI/UX Portfolio",
+  title:
+    "Kabby - Senior Software Engineer | Full-Stack Developer | Expert in Next.js and Express.js",
   description:
-    "Hire a freelance web developer and UI/UX expert building modern, fast‑loading Next.js applications. See full stack projects and portfolio case studies.",
+    "Kabby is a Senior Software Engineer and Full-Stack Developer with expertise in building scalable, high-performance web applications using Next.js, React, Node.js, Express.js, and Typescript. With years of experience in modern web development practices, Kabby delivers reliable, secure, and maintainable solutions for businesses and tech startups. Explore Kabby's portfolio to see the impact of successful, real-world full-stack projects, including robust backend architectures and dynamic frontend implementations.",
   keywords: [
-    "web development services",
-    "frontend development",
-    "full stack development",
-    "Next.js developer",
-    "web developer portfolio",
-    "web design and development",
+    "Senior Software Engineer",
+    "Full-Stack Developer",
+    "Next.js Developer",
+    "Express.js Developer",
+    "Node.js Developer",
+    "Typescript Developer",
     "Backend Developer",
-    "Backend Developement",
+    "Web Application Developer",
+    "Software Engineering Portfolio",
+    "Web Development Services",
+    "Backend Architecture",
     "React Developer",
-    "Typescript",
-    "Website Designers",
   ],
   openGraph: {
     title:
-      "Kabby | Next.js, Express.js, Typescript, Fullstack Developer, Software Engineer Portfolio",
+      "Kabby | Senior Software Engineer | Full-Stack Developer | Next.js and Express.js Expert",
     description:
-      "Explore a modern software engineer portfolio built with Next.js, Typescript and Framermotion. Full stack web developer delivering responsive UI/UX design for startups and brands.",
+      "Explore Kabby's senior-level software engineering portfolio, showcasing scalable, high-performance web applications built with Next.js, Express.js, and Typescript. Learn about the backend and frontend technologies that power dynamic digital solutions for businesses.",
     url: "https://www.kabby.pro",
     siteName: "Kabby",
     images: [
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
         url: "https://www.kabby.pro/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Kabby web development portfolio",
+        alt: "Kabby's web development portfolio",
       },
     ],
     locale: "en_US",
@@ -40,9 +42,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Kabby | Software Engineer | Fullstack Developer | Backend Developer | Frontend Developer",
+      "Kabby | Senior Software Engineer | Full-Stack Developer | Backend and Frontend Expertise",
     description:
-      "Modern full-stack web developer portfolio using Next.js and Typescript. View case studies and contact to hire.",
+      "View Kabby's senior-level software engineering portfolio featuring Next.js, Express.js, Typescript, and modern web application technologies. See case studies and get in touch to collaborate.",
     images: ["https://www.kabby.pro/og-image.jpg"],
   },
 };
@@ -56,6 +58,34 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+
+        <meta name="android-chrome" content="true" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/android-chrome-192x192.png"
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -65,7 +95,7 @@ export default function RootLayout({
               name: "Kabby",
               url: "https://www.kabby.pro",
               description:
-                "Software Engineer, Fullstack Developer, Frontend Developer, Backend Developer Developer Portfolio.",
+                "Senior Software Engineer and Full-Stack Developer Portfolio showcasing expertise in Next.js, Express.js, Node.js, and Typescript for scalable web applications.",
               publisher: {
                 "@type": "Person",
                 name: "Kabby",
@@ -92,7 +122,7 @@ export default function RootLayout({
                 "https://www.linkedin.com/in/kabiruakeem",
                 "https://twitter.com/kabiruakem",
               ],
-              jobTitle: "Fullstack | Frontend | Backend Web Developer",
+              jobTitle: "Senior Software Engineer | Full-Stack Developer",
               worksFor: {
                 "@type": "Organization",
                 name: "Kabby",
@@ -109,9 +139,8 @@ export default function RootLayout({
                 "Typescript",
                 "MongoDB",
                 "SQL Database",
-                "Frontend Development",
                 "Backend Development",
-                "Full Stack Web Development",
+                "Full-Stack Web Development",
               ],
             }),
           }}
