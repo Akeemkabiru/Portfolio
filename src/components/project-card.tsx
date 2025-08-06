@@ -35,7 +35,7 @@ export default function Card({
   return (
     <div
       ref={ref}
-      className={`w-fit h-fit md:h-full rounded-2xl std-backdrop-blur bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] flex flex-col  p-5 duration-700 ${
+      className={`w-fit h-fit md:h-full rounded-2xl std-backdrop-blur bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] flex flex-col hover:scale-105 p-5 duration-700 ${
         inView
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-12 pointer-events-none"
