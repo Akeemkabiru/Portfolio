@@ -184,7 +184,7 @@ export default function Home() {
         <div className="grid lg:grid-cols-3 gap-6">
           {PROJECTS.map(
             (
-              { picture, title, description, stacks, gitLink },
+              { picture, title, description, stacks, gitLink, link },
               index: number
             ) => (
               <Card
@@ -194,6 +194,7 @@ export default function Home() {
                 description={description}
                 stacks={stacks}
                 gitLink={gitLink}
+                link={link}
               />
             )
           )}

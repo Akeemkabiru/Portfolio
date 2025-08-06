@@ -5,14 +5,16 @@ import Image from "next/image";
 import "intersection-observer";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
-import { BsGithub } from "react-icons/bs";
+import { IconType } from "react-icons";
+import { SiGithub } from "react-icons/si";
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 export interface ICard {
   picture: string;
   title: string;
   description: string;
-  stacks: string[];
-  link?: string;
+  stacks: Array<{ icon: IconType; name: string }>;
+  link: string;
   gitLink?: string;
 }
 
@@ -22,6 +24,7 @@ export default function Card({
   description,
   stacks,
   gitLink,
+  link,
 }: ICard) {
   const { ref, inView } = useInView({
     threshold: 0.3,
@@ -43,28 +46,36 @@ export default function Card({
         alt="img"
         width={700}
         height={700}
-        className="w-full rounded-2xl"
+        className="w-full h-[180px] rounded-2xl"
       />
-      <div className="space-y-6">
+      <div className="space-y-6 flex flex-col justify-between h-full">
         <div className="flex items-center justify-between w-full mt-6">
           <h2 className="text-2xl lg:text-3xl font-bold">{title}</h2>
-
-          {gitLink && (
-            <Link href={gitLink}>
-              <BsGithub size={20} />
+          <div className="flex items-center gap-x-2">
+            {gitLink && (
+              <Link href={gitLink}>
+                <SiGithub size={18} />
+              </Link>
+            )}
+            <Link href={link}>
+              <HiOutlineExternalLink size={18} />
             </Link>
-          )}
+          </div>
         </div>
         <p>{description}</p>
-        <div className="flex gap-3 md:gap-4 flex-wrap ">
-          {stacks.map((stack, index: number) => (
-            <div
-              className="uppercase whitespace-nowrap bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] px-2 py-[6px] md:py-[6px] md:px-3 rounded-[4px] font-medium md:font-bold text-base"
-              key={index}
-            >
-              {stack}
-            </div>
-          ))}
+        <div className="flex gap-3 md:gap-4 flex-wrap justify-between items-center  ">
+          {stacks.map(({ name, icon }, i: number) => {
+            const Icon = icon;
+
+            return (
+              <div
+                className="uppercase whitespace-nowrap bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] px-2 py-[6px] md:py-[6px] md:px-3 rounded-[4px] font-medium md:font-bold text-base"
+                key={name}
+              >
+                <Icon key={i} title={name} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
