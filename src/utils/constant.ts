@@ -61,7 +61,7 @@ export const PROJECTS: ICard[] = [
     link: "https://www.haptle.com/",
   },
   {
-    picture: "/smartchef.png",
+    picture: "/smartchefs.png",
     title: "SmartChef",
     description:
       "SmartChef is an AI-powered recipe app that creates personalized meal ideas from your ingredients, preferences, and dietary needs. It features voice interaction, smart search, and image recognition for a seamless cooking experience.",
