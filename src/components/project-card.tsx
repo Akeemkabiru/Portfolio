@@ -35,7 +35,7 @@ export default function Card({
   return (
     <div
       ref={ref}
-      className={`w-fit rounded-2xl std-backdrop-blur bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] flex flex-col  p-5 duration-700 ${
+      className={`w-fit h-fit md:h-full rounded-2xl std-backdrop-blur bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] flex flex-col  p-5 duration-700 ${
         inView
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-12 pointer-events-none"
@@ -46,23 +46,25 @@ export default function Card({
         alt="img"
         width={700}
         height={700}
-        className="w-full h-[180px] rounded-2xl"
+        className="w-full md:h-[180px] h-[150px] rounded-2xl"
       />
-      <div className="space-y-6 flex flex-col justify-between h-full">
-        <div className="flex items-center justify-between w-full mt-6">
-          <h2 className="text-2xl lg:text-3xl font-bold">{title}</h2>
-          <div className="flex items-center gap-x-2">
-            {gitLink && (
-              <Link href={gitLink}>
-                <SiGithub size={18} />
+      <div className="space-y-5 flex flex-col justify-between h-full">
+        <div>
+          <div className="flex items-center justify-between w-full mt-6 mb-4">
+            <h2 className="text-2xl lg:text-3xl font-bold">{title}</h2>
+            <div className="flex items-center gap-x-4">
+              {gitLink && (
+                <Link href={gitLink}>
+                  <SiGithub size={18} />
+                </Link>
+              )}
+              <Link href={link}>
+                <HiOutlineExternalLink size={18} />
               </Link>
-            )}
-            <Link href={link}>
-              <HiOutlineExternalLink size={18} />
-            </Link>
+            </div>
           </div>
+          <p>{description}</p>
         </div>
-        <p>{description}</p>
         <div className="flex gap-3 md:gap-4 flex-wrap justify-between items-center  ">
           {stacks.map(({ name, icon }, i: number) => {
             const Icon = icon;
