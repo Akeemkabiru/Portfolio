@@ -46,7 +46,7 @@ export default function Card({
         alt="img"
         width={700}
         height={700}
-        className="w-full md:h-[180px] h-[150px] rounded-2xl"
+        className="w-full  h-[150px] rounded-2xl"
       />
       <div className="space-y-5 flex flex-col justify-between h-full">
         <div>
