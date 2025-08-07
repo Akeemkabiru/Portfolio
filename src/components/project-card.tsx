@@ -44,7 +44,7 @@ export default function Card({
       <Image
         src={picture}
         alt="img"
-        width={700}
+        width={400}
         height={700}
         className="w-full  h-[150px] rounded-2xl"
       />
