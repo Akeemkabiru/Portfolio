@@ -181,7 +181,7 @@ export default function Home() {
       {/* Projects Section */}
       <section className="flex flex-col gap-6 md:gap-10 mb-16" id="projects">
         <Title>Projects</Title>
-        <div className="grid lg:grid-cols-3 md:gap-8 gap-6 md:px-16">
+        <div className="grid lg:grid-cols-3 md:gap-8 gap-6 md:px-16 2xl:px-0">
           {PROJECTS.map(
             (
               { picture, title, description, stacks, gitLink, link },
