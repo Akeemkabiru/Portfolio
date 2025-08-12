@@ -92,6 +92,22 @@ export const PROJECTS: ICard[] = [
     gitLink: "https://github.com/Akeemkabiru/personalised-recipe",
     link: "https://personalised-recipe.vercel.app/",
   },
+
+  {
+    picture: "/trello.png",
+    title: "Trello Clone",
+    description:
+      "A fully functional clone of Trello: a project management tool for business",
+    stacks: [
+      { icon: SiReact, name: "React" },
+      { icon: SiTypescript, name: "Express" },
+      { icon: SiReacthookform, name: "reacthookform" },
+      { icon: SiTailwindcss, name: "tailwind" },
+      { icon: SiNextdotjs, name: "nextjs" },
+    ],
+    gitLink: "",
+    link: "",
+  },
 ];
 
 export const EXPERIENCE = [
