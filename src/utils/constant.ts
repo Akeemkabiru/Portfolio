@@ -105,8 +105,8 @@ export const PROJECTS: ICard[] = [
       { icon: SiTailwindcss, name: "tailwind" },
       { icon: SiNextdotjs, name: "nextjs" },
     ],
-    gitLink: "",
-    link: "",
+    gitLink: "https://github.com/Akeemkabiru/personalised-recipe",
+    link: "https://github.com/Akeemkabiru/personalised-recipe",
   },
 ];
 
