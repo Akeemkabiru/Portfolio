@@ -97,7 +97,7 @@ export const PROJECTS: ICard[] = [
     picture: "/trello.png",
     title: "Trello Clone",
     description:
-      "A fully functional clone of Trello: a project management tool for business",
+      "A management application that replicates core Trello features, including boards, lists, cards, drag-and-drop functionality, and real-time updates.",
     stacks: [
       { icon: SiReact, name: "React" },
       { icon: SiTypescript, name: "Express" },
