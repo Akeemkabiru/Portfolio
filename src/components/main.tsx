@@ -85,14 +85,16 @@ export default function Home() {
           } flex items-center justify-center z-[100]  mx-auto px-6 py-4 md:gap-x-8 gap-x-4 bg-clip-padding backdrop-filter bg-opacity-30 bg-gray-400 rounded-b-3xl transition-all duration-900 ease-in-out backdrop-blur`}
         >
           {NAVBAR_ITEMS.map(({ title, id, href }) => (
-            <Link
-              href={href || id}
-              key={id}
-              target={href ? "_blank" : "_self"}
-              className="hover:text-slate-500 focus:text-slate-500 transition-colors duration-300"
-            >
-              {title}
-            </Link>
+            <div key={id} className="group inline-block">
+              <Link
+                href={href || id}
+                target={href ? "_blank" : "_self"}
+                className="hover:text-slate-500 focus:text-slate-500 relative transition-colors duration-300"
+              >
+                {title}
+              </Link>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+            </div>
           ))}
         </nav>
       </div>

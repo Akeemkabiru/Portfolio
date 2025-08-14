@@ -29,22 +29,6 @@ export const NAVBAR_ITEMS = [
 
 export const PROJECTS: ICard[] = [
   {
-    picture: "/stashwise.png",
-    title: "Stashwise",
-    description:
-      "Founded with the vision to redefine savings and investment for the modern generation, with a focus on empowering individuals to achieve their financial goals.",
-    stacks: [
-      { icon: SiReact, name: "React" },
-      { icon: SiExpress, name: "Express" },
-      { icon: SiReacthookform, name: "reacthookform" },
-      { icon: SiTailwindcss, name: "tailwind" },
-      { icon: SiNextdotjs, name: "nextjs" },
-      { icon: SiMongodb, name: "nextjs" },
-    ],
-    gitLink: "",
-    link: "https://stashwise.africa/",
-  },
-  {
     picture: "/haptle.png",
     title: "Haptle Technologies",
     description:
