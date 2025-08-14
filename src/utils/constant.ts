@@ -27,22 +27,6 @@ export const NAVBAR_ITEMS = [
 
 export const PROJECTS: ICard[] = [
   {
-    picture: "/haptle.png",
-    title: "Haptle Technologies",
-    description:
-      "Haptle is dedicated to revolutionizing the way events are organized and experienced. The platform connects you with vetted and reliable vendors for all your needs, ensuring that your event is a success.",
-    stacks: [
-      { icon: SiTypescript, name: "TypeScript" },
-      { icon: SiFormik, name: "Express" },
-      { icon: SiNestjs, name: "reacthookform" },
-      { icon: SiTailwindcss, name: "tailwind" },
-      { icon: SiNextdotjs, name: "nextjs" },
-      { icon: SiFramer, name: "nextjs" },
-    ],
-    gitLink: "",
-    link: "https://www.haptle.com/",
-  },
-  {
     picture: "/smartchefs.png",
     title: "SmartChef",
     description:
