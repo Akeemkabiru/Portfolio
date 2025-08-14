@@ -2,13 +2,11 @@ import { ICard } from "@/components/project-card";
 import {
   SiReact,
   SiTypescript,
-  SiExpress,
   SiReacthookform,
   SiTailwindcss,
   SiNextdotjs,
   SiFormik,
   SiNestjs,
-  SiMongodb,
   SiFramer,
   SiOpenai,
   SiPostgresql,
