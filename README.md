@@ -30,11 +30,3 @@ This portfolio demonstrates:
 ## Live Demo
 
 [View Live Portfolio](https://www.kabby.pro)
-
-## Setup (Optional)
-
-```bash
-git clone https://github.com/akeemkabiru/portfolio.git
-cd portfolio
-npm install
-npm run dev
