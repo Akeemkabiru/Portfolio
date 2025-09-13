@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ViewProvider } from "@/context";
 
 export const metadata: Metadata = {
   title:
@@ -147,9 +146,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ViewProvider>
-          <main>{children}</main>
-        </ViewProvider>
+        <main>{children}</main>
       </body>
     </html>
   );
