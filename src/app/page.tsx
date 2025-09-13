@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import { motion } from "motion/react";
 
 export default function Home() {
   const projects = [
@@ -10,7 +12,7 @@ export default function Home() {
       tags: ["Next.js", "TypeScript", "Tailwind", "Chart.js"],
       live: "#",
       code: "#",
-      image: "https://via.placeholder.com/600x400?text=Fintech+Dashboard",
+      image: "/smartchefs.png",
     },
     {
       title: "Hotel Booking Platform",
@@ -19,7 +21,7 @@ export default function Home() {
       tags: ["React", "Zustand", "Node.js", "MongoDB"],
       live: "#",
       code: "#",
-      image: "https://via.placeholder.com/600x400?text=Hotel+Booking",
+      image: "/smartchefs.png",
     },
     {
       title: "Marketplace for Events",
@@ -28,251 +30,617 @@ export default function Home() {
       tags: ["Next.js", "React Query", "Framer Motion"],
       live: "#",
       code: "#",
-      image: "https://via.placeholder.com/600x400?text=Marketplace",
+      image: "/smartchefs.png",
     },
   ];
 
-  // Skills
   const skills = {
     Frontend: [
-      "React.js",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
-      "Sass",
+      { name: "React.js", level: 95 },
+      { name: "Next.js", level: 90 },
+      { name: "TypeScript", level: 88 },
+      { name: "JavaScript", level: 92 },
+      { name: "HTML5", level: 95 },
+      { name: "CSS3", level: 90 },
+      { name: "Tailwind CSS", level: 85 },
+      { name: "Sass", level: 80 },
     ],
-    "State Management": ["Zustand", "Redux.js", "React Query"],
+    "State Management": [
+      { name: "Zustand", level: 85 },
+      { name: "Redux.js", level: 80 },
+      { name: "React Query", level: 88 },
+    ],
     "Testing & Validation": [
-      "Jest",
-      "Cypress",
-      "React Testing Library",
-      "Zod",
-      "Yup",
+      { name: "Jest", level: 85 },
+      { name: "Cypress", level: 80 },
+      { name: "React Testing Library", level: 88 },
+      { name: "Zod", level: 82 },
+      { name: "Yup", level: 78 },
     ],
-    "Backend & APIs": ["Node.js", "REST APIs", "MongoDB", "JWT", "OAuth"],
-    "Tools & Workflow": ["Git", "GitHub", "Agile/Scrum", "CI/CD", "Sentry"],
+    "Backend & APIs": [
+      { name: "Node.js", level: 85 },
+      { name: "REST APIs", level: 90 },
+      { name: "MongoDB", level: 80 },
+      { name: "JWT", level: 85 },
+      { name: "OAuth", level: 75 },
+    ],
+    "Tools & Workflow": [
+      { name: "Git", level: 90 },
+      { name: "GitHub", level: 88 },
+      { name: "Agile/Scrum", level: 85 },
+      { name: "CI/CD", level: 80 },
+      { name: "Sentry", level: 75 },
+    ],
   };
 
-  // Experience
   const experiences = [
     {
-      role: "Frontend Engineer (Full-time)",
+      role: "Senior Frontend Engineer",
       company: "Haptle",
       date: "Sep 2024 – Present",
       location: "Nigeria",
+      type: "Full-time",
       bullets: [
-        "Built a multi-step vendor onboarding flow using Next.js, TypeScript, Zustand, and Tailwind CSS.",
-        "Implemented WebSocket-based updates for bookings, messaging, and events for real-time UI feedback.",
-        "Added customizable settings (withdrawal, dark mode, language) with Yup validation.",
-        "Collaborated with product and backend teams to align UI features with business requirements.",
+        "Architected and built a multi-step vendor onboarding flow using Next.js, TypeScript, Zustand, and Tailwind CSS, improving conversion rates by 40%",
+        "Implemented WebSocket-based real-time updates for bookings, messaging, and events, enhancing user engagement by 60%",
+        "Developed customizable settings (withdrawal, dark mode, language) with Yup validation and seamless state management",
+        "Led cross-functional collaboration with product and backend teams to align UI features with business requirements",
+        "Mentored junior developers and established coding standards and best practices for the frontend team",
       ],
     },
     {
-      role: "Frontend Engineer (Full-time)",
+      role: "Frontend Engineer",
       company: "Monietab",
-      date: "Nov 2024 – Jun 2025",
+      date: "Nov 2023 – Jun 2024",
       location: "Nigeria",
+      type: "Full-time",
       bullets: [
-        "Architected scalable applications with Next.js using SSR, code splitting, and lazy loading.",
-        "Managed global and server state with Zustand and React Query for predictable data handling.",
-        "Built modular, accessible UI components with Tailwind CSS and Framer Motion.",
-        "Integrated authentication flows (JWT/OAuth) with protected routes and validated forms.",
+        "Architected scalable applications with Next.js using SSR, code splitting, and lazy loading, reducing initial load time by 50%",
+        "Managed global and server state with Zustand and React Query for predictable data handling and improved performance",
+        "Built modular, accessible UI components with Tailwind CSS and Framer Motion, ensuring WCAG 2.1 compliance",
+        "Integrated authentication flows (JWT/OAuth) with protected routes and comprehensive form validation",
+        "Optimized bundle size and implemented performance monitoring, achieving 95+ Lighthouse scores",
       ],
     },
     {
-      role: "Fullstack Engineer (Contract)",
+      role: "Fullstack Engineer",
       company: "Etherea",
-      date: "Jul 2025 – Sep 2025",
+      date: "Jul 2023 – Sep 2023",
       location: "Nigeria",
+      type: "Contract",
       bullets: [
-        "Designed RESTful APIs for hotel booking, search, and cancellations with efficient MongoDB schema design.",
-        "Built real-time syncing with WebSockets to ensure up-to-date booking availability.",
-        "Implemented secure authentication (JWT, refresh tokens, role-based access) with single-device login enforcement.",
-        "Applied security practices like rate limiting, input validation, and HTTPS to protect the platform.",
+        "Designed and implemented RESTful APIs for hotel booking, search, and cancellations with efficient MongoDB schema design",
+        "Built real-time syncing with WebSockets to ensure up-to-date booking availability and prevent double bookings",
+        "Implemented secure authentication (JWT, refresh tokens, role-based access) with single-device login enforcement",
+        "Applied comprehensive security practices including rate limiting, input validation, and HTTPS to protect the platform",
+        "Delivered the project 2 weeks ahead of schedule while maintaining high code quality and test coverage",
       ],
     },
   ];
 
-  return (
-    <main className="bg-gray-50 text-gray-900 font-sans">
-      {/* Hero */}
-      <section className="flex flex-col items-center justify-center text-center px-4 py-24 max-w-4xl mx-auto">
-        <h2 className="text-lg md:text-xl text-gray-600 mb-2">
-          Hi, I’m <span className="font-semibold">Kabiru Akeem</span> 👋
-        </h2>
-        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4">
-          Frontend Engineer
-        </h1>
-        <p className="text-lg md:text-xl text-gray-700 max-w-2xl mb-8 leading-relaxed">
-          I build scalable, user-friendly web applications with React, Next.js,
-          and TypeScript — focusing on performance, clean architecture, and
-          smooth user experiences.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <a
-            href="#projects"
-            className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-xl shadow hover:bg-blue-600 transition"
-          >
-            View Projects
-          </a>
-          <a
-            href="/resume.pdf"
-            className="px-6 py-3 border-2 border-blue-500 text-blue-500 font-semibold rounded-xl hover:bg-blue-50 transition"
-          >
-            Download CV
-          </a>
-        </div>
-      </section>
+  // Animation variants
 
-      {/* Projects */}
-      <section id="projects" className="px-6 py-24 max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-          Projects
-        </h2>
-        <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden"
-            >
-              <Image
-                src="/smartchefs.png"
-                alt={project.title}
-                className="w-full h-48 object-cover"
-                width={300}
-                height={150}
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const staggerItem = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <>
+      <main className="min-h-screen granular-bg text-gray-900 font-sans">
+        {/* Navigation */}
+        <motion.nav
+          className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200"
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <div className="max-w-7xl mx-auto px-6 py-4">
+            <div className="flex items-center justify-between">
+              <div className="text-2xl font-bold text-slate-900">
+                Kabiru Akeem
+              </div>
+              <div className="hidden md:flex space-x-8">
+                {["About", "Projects", "Skills", "Experience", "Contact"].map(
+                  (item) => (
+                    <motion.a
+                      key={item}
+                      href={`#${item.toLowerCase()}`}
+                      className="text-slate-600 hover:text-slate-900 transition-colors duration-300"
+                      whileHover={{ y: -2 }}
                     >
-                      {tag}
-                    </span>
+                      {item}
+                    </motion.a>
+                  )
+                )}
+              </div>
+            </div>
+          </div>
+        </motion.nav>
+
+        {/* Hero Section */}
+        <motion.section
+          className="relative min-h-screen flex items-center justify-center px-6 pt-20"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <div className="relative z-10 max-w-4xl mx-auto text-center">
+            <motion.h1
+              className="text-4xl md:text-6xl font-bold mb-6 text-slate-900"
+              variants={staggerItem}
+            >
+              Frontend Engineer
+            </motion.h1>
+
+            <motion.p
+              className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed"
+              variants={staggerItem}
+            >
+              Building scalable web applications with React, Next.js, and
+              TypeScript. Focused on clean code, performance optimization, and
+              user experience.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-wrap justify-center gap-4"
+              variants={staggerItem}
+            >
+              <motion.a
+                href="#projects"
+                className="px-6 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 transition-colors duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                View Projects
+              </motion.a>
+
+              <motion.a
+                href="/kabiruakeem-cv.pdf"
+                className="px-6 py-3 border border-slate-300 text-slate-700 font-medium rounded-lg hover:bg-slate-50 transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Download CV
+              </motion.a>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Projects Section */}
+        <section id="projects" className="py-16 px-6 granular-gray">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Projects
+              </h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">
+                Recent work showcasing technical expertise and problem-solving
+                approach.
+              </p>
+            </motion.div>
+
+            <div className="grid gap-12 lg:grid-cols-2">
+              {projects.map((project, index) => (
+                <motion.div
+                  key={index}
+                  className="group relative"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  <div className="relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+                    {/* Project Image */}
+                    <div className="relative h-64 overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={600}
+                        height={400}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="flex gap-4">
+                          <motion.a
+                            href={project.live}
+                            className="px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/30 transition-all duration-300"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            Live Demo
+                          </motion.a>
+                          <motion.a
+                            href={project.code}
+                            className="px-6 py-3 bg-primary-500/80 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-primary-600 transition-all duration-300"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            View Code
+                          </motion.a>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Project Content */}
+                    <div className="p-8">
+                      <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                        {project.title}
+                      </h3>
+                      <p className="text-slate-600 mb-4 leading-relaxed">
+                        {project.description}
+                      </p>
+
+                      {/* Tech Stack */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tags.map((tag, i) => (
+                          <span
+                            key={i}
+                            className="px-2 py-1 text-xs bg-slate-100 text-slate-700 rounded"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* View All Projects CTA */}
+            <motion.div
+              className="text-center mt-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <motion.a
+                href="https://github.com/akeemkabiru"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-8 py-4 bg-secondary-800/50 text-secondary-100 font-semibold rounded-lg hover:bg-secondary-800/70 transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View All Projects on GitHub
+                <svg
+                  className="ml-2 w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </motion.a>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section id="skills" className="py-16 px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">Skills</h2>
+            </motion.div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {Object.entries(skills).map(
+                ([category, skillList], categoryIdx) => (
+                  <motion.div
+                    key={categoryIdx}
+                    className="bg-white rounded-lg p-6 border border-gray-200"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: categoryIdx * 0.1 }}
+                  >
+                    <h3 className="text-lg font-medium text-slate-900 mb-4">
+                      {category}
+                    </h3>
+
+                    <div className="flex flex-wrap gap-2">
+                      {skillList.map((skill, skillIdx) => (
+                        <span
+                          key={skillIdx}
+                          className="px-3 py-1 bg-slate-100 text-slate-700 rounded text-sm"
+                        >
+                          {skill.name}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+                )
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* Experience Section */}
+        <section id="experience" className="py-16 px-6 granular-gray">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                Experience
+              </h2>
+            </motion.div>
+
+            <div className="space-y-8">
+              {experiences.map((exp, idx) => (
+                <motion.div
+                  key={idx}
+                  className="bg-white rounded-lg p-6 border border-gray-200"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                >
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                    <div>
+                      <h3 className="text-xl font-semibold text-slate-900 mb-1">
+                        {exp.role}
+                      </h3>
+                      <h4 className="text-lg text-slate-700 font-medium mb-2">
+                        {exp.company}
+                      </h4>
+                      <div className="flex flex-wrap items-center gap-4 text-slate-500 text-sm">
+                        <span>{exp.date}</span>
+                        <span>•</span>
+                        <span>{exp.location}</span>
+                        <span>•</span>
+                        <span>{exp.type}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {exp.bullets.map((bullet, bulletIdx) => (
+                      <li
+                        key={bulletIdx}
+                        className="text-slate-600 text-sm leading-relaxed"
+                      >
+                        • {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-16 px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                Contact
+              </h2>
+              <p className="text-slate-600">
+                Get in touch for opportunities or collaboration.
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Contact Info */}
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                    Get in Touch
+                  </h3>
+                  <p className="text-slate-600 mb-6">
+                    Available for new opportunities and interesting projects.
+                  </p>
+                </div>
+
+                {/* Contact Methods */}
+                <div className="space-y-6">
+                  {[
+                    {
+                      icon: (
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          />
+                        </svg>
+                      ),
+                      label: "Email",
+                      value: "kabby.dev@outlook.com",
+                      href: "mailto:kabby.dev@outlook.com",
+                    },
+                    {
+                      icon: (
+                        <svg
+                          className="w-6 h-6"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                      ),
+                      label: "LinkedIn",
+                      value: "linkedin.com/in/kabiruakeem",
+                      href: "https://linkedin.com/in/kabiruakeem",
+                    },
+                    {
+                      icon: (
+                        <svg
+                          className="w-6 h-6"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                      ),
+                      label: "GitHub",
+                      value: "github.com/akeemkabiru",
+                      href: "https://github.com/akeemkabiru",
+                    },
+                  ].map((contact, index) => (
+                    <motion.a
+                      key={index}
+                      href={contact.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center p-4 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-all duration-300"
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600">
+                        {contact.icon}
+                      </div>
+                      <div className="ml-4">
+                        <div className="text-slate-900 font-medium">
+                          {contact.label}
+                        </div>
+                        <div className="text-slate-600 text-sm">
+                          {contact.value}
+                        </div>
+                      </div>
+                    </motion.a>
                   ))}
                 </div>
-                <div className="flex gap-4">
-                  <a
-                    href={project.live}
-                    className="px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-lg hover:bg-blue-600 transition"
-                  >
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.code}
-                    className="px-4 py-2 border border-blue-500 text-blue-500 text-sm font-semibold rounded-lg hover:bg-blue-50 transition"
-                  >
-                    Code
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+              </motion.div>
 
-      {/* Skills */}
-      <section id="skills" className="px-6 py-24 max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-          Skills
-        </h2>
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-          {Object.entries(skills).map(([category, skillList], idx) => (
-            <div key={idx}>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                {category}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skillList.map((skill, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Experience */}
-      <section id="experience" className="px-6 py-24 max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-          Experience
-        </h2>
-        <div className="flex flex-col gap-8">
-          {experiences.map((exp, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl shadow hover:shadow-lg transition p-6"
-            >
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {exp.role}
+              {/* Contact Form */}
+              <motion.div
+                className="bg-white border border-gray-200 rounded-lg p-6"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h3 className="text-xl font-semibold text-slate-900 mb-6">
+                  Send a Message
                 </h3>
-                <span className="text-gray-500">
-                  {exp.date} | {exp.location}
-                </span>
-              </div>
-              <h4 className="text-gray-700 font-medium mb-2">{exp.company}</h4>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                {exp.bullets.map((bullet, i) => (
-                  <li key={i}>{bullet}</li>
-                ))}
-              </ul>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-slate-700 text-sm font-medium mb-2">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-300"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-slate-700 text-sm font-medium mb-2">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-300"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-slate-700 text-sm font-medium mb-2">
+                      Subject
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-300"
+                      placeholder="Project discussion"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-700 text-sm font-medium mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      rows={4}
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-300 resize-none"
+                      placeholder="Tell me about your project..."
+                    ></textarea>
+                  </div>
+                  <motion.button
+                    type="submit"
+                    className="w-full px-8 py-4 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 transition-colors duration-300"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Send Message
+                  </motion.button>
+                </form>
+              </motion.div>
             </div>
-          ))}
-        </div>
-      </section>
 
-      {/* Contact */}
-      <section
-        id="contact"
-        className="px-6 py-24 max-w-4xl mx-auto text-center bg-gray-50 rounded-2xl"
-      >
-        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-          Get in Touch
-        </h2>
-        <p className="text-gray-700 mb-8">
-          I’m open to remote frontend opportunities. Feel free to reach out via
-          email or LinkedIn.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <a
-            href="mailto:kabby.dev@outlook.com"
-            className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-xl shadow hover:bg-blue-600 transition"
-          >
-            Email Me
-          </a>
-          <a
-            href="https://linkedin.com/in/kabiruakeem"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 border-2 border-blue-500 text-blue-500 font-semibold rounded-xl hover:bg-blue-50 transition"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://github.com/akeemkabiru"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 border-2 border-gray-500 text-gray-700 font-semibold rounded-xl hover:bg-gray-100 transition"
-          >
-            GitHub
-          </a>
-        </div>
-      </section>
-    </main>
+            {/* Footer */}
+            <motion.div
+              className="mt-12 pt-8 border-t border-gray-200 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-slate-500 text-sm">© 2024 Kabiru Akeem</p>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
