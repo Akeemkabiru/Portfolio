@@ -164,7 +164,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="min-h-screen  text-gray-900 font-sans text-sm">
+      <main className="min-h-screen  text-gray-900 font-sans text-sm ">
         {/* Navigation */}
         <motion.nav
           className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200"
@@ -174,20 +174,20 @@ export default function Home() {
         >
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
-              <div className="text-2xl font-bold text-slate-900">
-                Kabiru Akeem
-              </div>
+              <div className="text-2xl font-bold text-slate-900">Kabby</div>
               <div className="hidden md:flex space-x-8">
-                {["Projects", "Skills", "Experience", "Contact"].map((item) => (
-                  <motion.a
-                    key={item}
-                    href={`#${item.toLowerCase()}`}
-                    className="text-slate-600 hover:text-slate-900 transition-colors duration-300"
-                    whileHover={{ y: -2 }}
-                  >
-                    {item}
-                  </motion.a>
-                ))}
+                {["Projects", "About", "Skills", "Experience", "Contact"].map(
+                  (item) => (
+                    <motion.a
+                      key={item}
+                      href={`#${item.toLowerCase()}`}
+                      className="text-slate-600 hover:text-slate-900 transition-colors duration-300"
+                      whileHover={{ y: -2 }}
+                    >
+                      {item}
+                    </motion.a>
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -212,9 +212,8 @@ export default function Home() {
               className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed"
               variants={staggerItem}
             >
-              Frontend Engineer delivering performant web applications.
-              Experienced in architecting complex interfaces and integrating
-              real-time data systems with React, Next.js, and TypeScript.
+              I design and deliver high-performance applications that transform
+              data into intuitive, reliable user experiences.
             </motion.p>
 
             <motion.div
@@ -227,7 +226,7 @@ export default function Home() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                View Projects
+                Explore Projects
               </motion.a>
 
               <motion.a
@@ -236,7 +235,7 @@ export default function Home() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Download CV
+                Resume
               </motion.a>
             </motion.div>
           </div>
@@ -255,10 +254,6 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 Projects
               </h2>
-              <p className="text-slate-600 max-w-2xl mx-auto">
-                Recent work showcasing technical expertise and problem-solving
-                approach.
-              </p>
             </motion.div>
 
             <div className="grid gap-8 lg:grid-cols-3">
@@ -364,6 +359,54 @@ export default function Home() {
                 </svg>
               </motion.a>
             </motion.div>
+          </div>
+        </section>
+
+        {/* About */}
+        <section id="about" className="py-16 px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">About</h2>
+            </motion.div>
+            <div className="flex lg:flex-row flex-col items-center lg:items-start gap-8 bg-white p-6 rounded-lg">
+              <Image
+                src="/kabby.jpeg"
+                alt=""
+                width={300}
+                height={300}
+                className="rounded-md"
+              />
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-base text-justify space-y-4 hyphens-auto"
+              >
+                <p>
+                  I’m Kabiru Akeem, a Frontend Engineer who cares about clarity,
+                  scalability, and long-term impact. I approach system design
+                  with an eye for trade-offs, making informed decisions that
+                  balance performance, usability, and maintainability. For me,
+                  writing code is only part of the job, the bigger challenge is
+                  designing systems that evolve gracefully and guiding teams
+                  toward shared technical standards.
+                </p>
+                <p>
+                  I believe great engineering comes from collaboration as much
+                  as technical skill. I work closely with product and backend
+                  teams to ensure the frontend is not just functional but
+                  aligned with the bigger picture.
+                </p>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -484,9 +527,6 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
                 Contact
               </h2>
-              <p className="text-slate-600">
-                Get in touch for opportunities or collaboration.
-              </p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12">
@@ -498,15 +538,6 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                    Get in Touch
-                  </h3>
-                  <p className="text-slate-600 mb-6">
-                    Available for new opportunities and interesting projects.
-                  </p>
-                </div>
-
                 {/* Contact Methods */}
                 <div className="space-y-6">
                   {[
@@ -661,7 +692,9 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-slate-500 text-sm">© 2024 Kabiru Akeem</p>
+              <p className="text-slate-500 text-sm">
+                &copy; {new Date().getFullYear()} Kabiru Akeem
+              </p>
             </motion.div>
           </div>
         </section>
