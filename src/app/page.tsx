@@ -5,72 +5,99 @@ import { motion } from "motion/react";
 
 export default function Home() {
   const projects = [
+    // Senior Frontend / Fullstack Projects
     {
-      title: "Fintech Dashboard",
+      title: "Realtime Analytics Dashboard",
       description:
-        "A modern dashboard for managing transactions, budgets, and analytics. Built with Next.js, TypeScript, and Tailwind.",
-      tags: ["Next.js", "TypeScript", "Tailwind", "Chart.js"],
+        "Displays live user metrics with interactive charts and drill-down insights, optimized for high-frequency data streams.",
+      tags: ["Next.js", "TypeScript", "Tailwind", "React Query", "Chart.js"],
       live: "#",
       code: "#",
-      image: "/smartchefs.png",
+      image: "/trek.png",
     },
     {
-      title: "Hotel Booking Platform",
+      title: "Collaboration Platform",
       description:
-        "A booking system with real-time availability, secure authentication, and smooth UI flows.",
-      tags: ["React", "Zustand", "Node.js", "MongoDB"],
+        "Supports multi-user document editing and task management with real-time synchronization and role-based access control.",
+      tags: ["React", "Node.js", "Express", "MongoDB", "WebSockets"],
       live: "#",
       code: "#",
-      image: "/smartchefs.png",
+      image: "/trek.png",
     },
     {
-      title: "Marketplace for Events",
+      title: "Data Visualization Tool",
       description:
-        "A platform to hire event professionals, featuring vendor onboarding and customizable settings.",
-      tags: ["Next.js", "React Query", "Framer Motion"],
+        "Enables exploration of large datasets with dynamic filtering, searching, and animated visualizations, ensuring responsive performance.",
+      tags: ["React", "TypeScript", "D3.js", "Zustand", "Tailwind"],
       live: "#",
       code: "#",
-      image: "/smartchefs.png",
+      image: "/trek.png",
+    },
+
+    // Bioinformatics / Protein Visualization Projects
+    {
+      title: "MemProt Explorer",
+      description:
+        "Interactive visualization of membrane protein structures, ligand-binding sites, and mutations with real-time 3D rendering.",
+      tags: ["React", "TypeScript", "Mol*", "NGL Viewer"],
+      live: "#",
+      code: "#",
+      image: "/trek.png",
+    },
+    {
+      title: "GPCR Disease Atlas",
+      description:
+        "Maps GPCRs to diseases and drugs in an interactive dashboard with integrated biological datasets and dynamic filtering.",
+      tags: ["React", "TypeScript", "D3.js", "API Integration"],
+      live: "#",
+      code: "#",
+      image: "/trek.png",
+    },
+    {
+      title: "Protein Mutation Mapper",
+      description:
+        "Provides interactive mapping of disease-associated mutations in membrane proteins, supporting data exploration and visualization.",
+      tags: ["React", "TypeScript", "Visualization", "API Integration"],
+      live: "#",
+      code: "#",
+      image: "/trek.png",
     },
   ];
 
   const skills = {
     Frontend: [
-      { name: "React.js", level: 95 },
-      { name: "Next.js", level: 90 },
-      { name: "TypeScript", level: 88 },
-      { name: "JavaScript", level: 92 },
-      { name: "HTML5", level: 95 },
-      { name: "CSS3", level: 90 },
-      { name: "Tailwind CSS", level: 85 },
-      { name: "Sass", level: 80 },
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Sass",
+      "Framer Motion",
+      "D3.js",
     ],
     "State Management": [
-      { name: "Zustand", level: 85 },
-      { name: "Redux.js", level: 80 },
-      { name: "React Query", level: 88 },
+      "Zustand",
+      "Redux Toolkit",
+      "React Query",
+      "Context API",
     ],
     "Testing & Validation": [
-      { name: "Jest", level: 85 },
-      { name: "Cypress", level: 80 },
-      { name: "React Testing Library", level: 88 },
-      { name: "Zod", level: 82 },
-      { name: "Yup", level: 78 },
+      "Jest",
+      "Cypress",
+      "React Testing Library",
+      "Zod",
+      "Yup",
     ],
     "Backend & APIs": [
-      { name: "Node.js", level: 85 },
-      { name: "REST APIs", level: 90 },
-      { name: "MongoDB", level: 80 },
-      { name: "JWT", level: 85 },
-      { name: "OAuth", level: 75 },
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "GraphQL (Apollo)",
+      "MongoDB",
     ],
-    "Tools & Workflow": [
-      { name: "Git", level: 90 },
-      { name: "GitHub", level: 88 },
-      { name: "Agile/Scrum", level: 85 },
-      { name: "CI/CD", level: 80 },
-      { name: "Sentry", level: 75 },
-    ],
+    "Tools & Workflow": ["Git", "GitHub", "Agile / Scrum", "CI/CD", "Sentry"],
   };
 
   const experiences = [
@@ -137,7 +164,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="min-h-screen granular-bg text-gray-900 font-sans">
+      <main className="min-h-screen  text-gray-900 font-sans text-sm">
         {/* Navigation */}
         <motion.nav
           className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200"
@@ -151,18 +178,16 @@ export default function Home() {
                 Kabiru Akeem
               </div>
               <div className="hidden md:flex space-x-8">
-                {["About", "Projects", "Skills", "Experience", "Contact"].map(
-                  (item) => (
-                    <motion.a
-                      key={item}
-                      href={`#${item.toLowerCase()}`}
-                      className="text-slate-600 hover:text-slate-900 transition-colors duration-300"
-                      whileHover={{ y: -2 }}
-                    >
-                      {item}
-                    </motion.a>
-                  )
-                )}
+                {["Projects", "Skills", "Experience", "Contact"].map((item) => (
+                  <motion.a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    className="text-slate-600 hover:text-slate-900 transition-colors duration-300"
+                    whileHover={{ y: -2 }}
+                  >
+                    {item}
+                  </motion.a>
+                ))}
               </div>
             </div>
           </div>
@@ -187,9 +212,9 @@ export default function Home() {
               className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed"
               variants={staggerItem}
             >
-              Building scalable web applications with React, Next.js, and
-              TypeScript. Focused on clean code, performance optimization, and
-              user experience.
+              Frontend Engineer delivering performant web applications.
+              Experienced in architecting complex interfaces and integrating
+              real-time data systems with React, Next.js, and TypeScript.
             </motion.p>
 
             <motion.div
@@ -236,17 +261,17 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <div className="grid gap-12 lg:grid-cols-2">
+            <div className="grid gap-8 lg:grid-cols-3">
               {projects.map((project, index) => (
                 <motion.div
                   key={index}
-                  className="group relative"
+                  className="group relative h-full"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
-                  <div className="relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300 group-hover:scale-[1.02]">
+                  <div className="relative flex flex-col h-full overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300 group-hover:scale-[1.02]">
                     {/* Project Image */}
                     <div className="relative h-64 overflow-hidden">
                       <Image
@@ -282,16 +307,16 @@ export default function Home() {
                     </div>
 
                     {/* Project Content */}
-                    <div className="p-8">
+                    <div className="p-8 flex flex-col flex-1">
                       <h3 className="text-xl font-semibold text-slate-900 mb-3">
                         {project.title}
                       </h3>
-                      <p className="text-slate-600 mb-4 leading-relaxed">
+                      <p className="text-slate-600 mb-4 leading-relaxed flex-1">
                         {project.description}
                       </p>
 
                       {/* Tech Stack */}
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="flex flex-wrap gap-2 mt-auto">
                         {project.tags.map((tag, i) => (
                           <span
                             key={i}
@@ -376,7 +401,7 @@ export default function Home() {
                           key={skillIdx}
                           className="px-3 py-1 bg-slate-100 text-slate-700 rounded text-sm"
                         >
-                          {skill.name}
+                          {skill}
                         </span>
                       ))}
                     </div>
@@ -582,7 +607,7 @@ export default function Home() {
                       <input
                         type="text"
                         className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-300"
-                        placeholder="Your name"
+                        placeholder="Your "
                       />
                     </div>
                     <div>
