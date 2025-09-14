@@ -5,40 +5,44 @@ import { motion } from "motion/react";
 
 export default function Home() {
   const projects = [
-    // Senior Frontend / Fullstack Projects
+    // AI Project (realistic, free APIs available)
     {
-      title: "Realtime Analytics Dashboard",
+      title: "AI Writing Assistant",
       description:
-        "Displays live user metrics with interactive charts and drill-down insights, optimized for high-frequency data streams.",
-      tags: ["Next.js", "TypeScript", "Tailwind", "React Query", "Chart.js"],
-      live: "#",
-      code: "#",
-      image: "/trek.png",
-    },
-    {
-      title: "Collaboration Platform",
-      description:
-        "Supports multi-user document editing and task management with real-time synchronization and role-based access control.",
-      tags: ["React", "Node.js", "Express", "MongoDB", "WebSockets"],
-      live: "#",
-      code: "#",
-      image: "/trek.png",
-    },
-    {
-      title: "Data Visualization Tool",
-      description:
-        "Enables exploration of large datasets with dynamic filtering, searching, and animated visualizations, ensuring responsive performance.",
-      tags: ["React", "TypeScript", "D3.js", "Zustand", "Tailwind"],
+        "Helps users rephrase, summarize, or expand text with a simple editor interface powered by free AI APIs.",
+      tags: ["Next.js", "TypeScript", "Tailwind", "OpenAI API (free tier)"],
       live: "#",
       code: "#",
       image: "/trek.png",
     },
 
-    // Bioinformatics / Protein Visualization Projects
+    // SaaS Dashboard
+    {
+      title: "Team Productivity Dashboard",
+      description:
+        "Tracks tasks, deadlines, and team activity in a single dashboard with charts, filters, and exportable reports.",
+      tags: ["React", "Next.js", "TypeScript", "Chart.js", "SQLite"],
+      live: "#",
+      code: "#",
+      image: "/trek.png",
+    },
+
+    // Developer Tool
+    {
+      title: "API Playground",
+      description:
+        "Lightweight tool to test REST and GraphQL endpoints with schema inspection and request history.",
+      tags: ["React", "TypeScript", "Tailwind", "GraphQL"],
+      live: "#",
+      code: "#",
+      image: "/trek.png",
+    },
+
+    // Bioinformatics (free datasets, static integrations)
     {
       title: "MemProt Explorer",
       description:
-        "Interactive visualization of membrane protein structures, ligand-binding sites, and mutations with real-time 3D rendering.",
+        "Interactive visualization of membrane protein structures, ligand-binding sites, and mutations with 3D rendering.",
       tags: ["React", "TypeScript", "Mol*", "NGL Viewer"],
       live: "#",
       code: "#",
@@ -47,8 +51,8 @@ export default function Home() {
     {
       title: "GPCR Disease Atlas",
       description:
-        "Maps GPCRs to diseases and drugs in an interactive dashboard with integrated biological datasets and dynamic filtering.",
-      tags: ["React", "TypeScript", "D3.js", "API Integration"],
+        "Maps GPCRs to diseases and drugs in an interactive dashboard with integrated datasets and filters.",
+      tags: ["React", "TypeScript", "D3.js", "Open Data"],
       live: "#",
       code: "#",
       image: "/trek.png",
@@ -56,8 +60,8 @@ export default function Home() {
     {
       title: "Protein Mutation Mapper",
       description:
-        "Provides interactive mapping of disease-associated mutations in membrane proteins, supporting data exploration and visualization.",
-      tags: ["React", "TypeScript", "Visualization", "API Integration"],
+        "Provides interactive mapping of disease-associated mutations in membrane proteins with exploration tools.",
+      tags: ["React", "TypeScript", "Visualization", "Open Data"],
       live: "#",
       code: "#",
       image: "/trek.png",
