@@ -332,7 +332,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-
+                <div className="text-slate-600 text-sm leading-relaxed mb-4">
+                  <span className="font-semibold">Overview:</span>{" "}
+                  <span>{exp.overview}</span>
+                </div>
                 <ul className="space-y-2">
                   {exp.bullets.map((bullet, bulletIdx) => (
                     <li
@@ -343,6 +346,11 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+
+                <div className="text-slate-600 text-sm leading-relaxed mt-4">
+                  <span className="font-semibold">Impact:</span>{" "}
+                  <span>{exp.impact}</span>
+                </div>
               </motion.div>
             ))}
           </div>

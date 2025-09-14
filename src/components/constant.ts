@@ -6,7 +6,7 @@ export const projects = [
     tags: ["Next.js", "TypeScript", "Tailwind", "OpenAI API (free tier)"],
     live: "#",
     code: "#",
-    image: "/trek.png",
+    image: "/ai.jpg",
   },
   {
     title: "Team Productivity Dashboard",
@@ -15,7 +15,7 @@ export const projects = [
     tags: ["React", "Next.js", "TypeScript", "Chart.js", "SQLite"],
     live: "#",
     code: "#",
-    image: "/trek.png",
+    image: "/ai.jpg",
   },
   {
     title: "API Playground",
@@ -24,7 +24,7 @@ export const projects = [
     tags: ["React", "TypeScript", "Tailwind", "GraphQL"],
     live: "#",
     code: "#",
-    image: "/trek.png",
+    image: "/ai.jpg",
   },
 ];
 
@@ -66,18 +66,20 @@ export const skills = {
 
 export const experiences = [
   {
-    role: "Senior Frontend Engineer",
+    role: "Frontend Engineer",
     company: "Haptle",
     date: "Sep 2024 – Present",
     location: "Nigeria",
     type: "Full-time",
+    overview:
+      "Haptle is an online marketplace connecting users with vetted vendors for event planning, ensuring secure transactions and quality service.",
     bullets: [
-      "Architected and built a multi-step vendor onboarding flow using Next.js, TypeScript, Zustand, and Tailwind CSS, improving conversion rates by 40%",
-      "Implemented WebSocket-based real-time updates for bookings, messaging, and events, enhancing user engagement by 60%",
-      "Developed customizable settings (withdrawal, dark mode, language) with Yup validation and seamless state management",
-      "Led cross-functional collaboration with product and backend teams to align UI features with business requirements",
-      "Mentored junior developers and established coding standards and best practices for the frontend team",
+      "Built multi-step vendor onboarding flow (Next.js, TypeScript, Zustand, Tailwind CSS)",
+      "Implemented real-time updates for bookings, messaging, and events (WebSockets)",
+      "Added customizable settings with Yup validation for better user personalization",
     ],
+    impact:
+      "Streamlined onboarding and improved user engagement with faster interactions",
   },
   {
     role: "Frontend Engineer",
@@ -85,26 +87,31 @@ export const experiences = [
     date: "Nov 2023 – Jun 2024",
     location: "Nigeria",
     type: "Full-time",
+    overview:
+      "Monietab is a fintech platform modernizing savings groups and cooperatives with automated financial management and real-time transparency.",
     bullets: [
-      "Architected scalable applications with Next.js using SSR, code splitting, and lazy loading, reducing initial load time by 50%",
-      "Managed global and server state with Zustand and React Query for predictable data handling and improved performance",
-      "Built modular, accessible UI components with Tailwind CSS and Framer Motion, ensuring WCAG 2.1 compliance",
-      "Integrated authentication flows (JWT/OAuth) with protected routes and comprehensive form validation",
-      "Optimized bundle size and implemented performance monitoring, achieving 95+ Lighthouse scores",
+      "Architected Next.js app with SSR, code splitting, and lazy loading",
+      "Managed global and server state using Zustand and React Query",
+      "Built modular, accessible UI components and secure JWT/OAuth authentication flows",
     ],
+    impact:
+      "Improved performance, accessibility, and security for users across the platform",
   },
   {
     role: "Fullstack Engineer",
-    company: "Etherea",
+    company: "EtherealCorp",
     date: "Jul 2023 – Sep 2023",
     location: "Nigeria",
     type: "Contract",
+    overview:
+      "EtherealCorp is a hotel booking platform providing real-time availability and secure transactions.",
     bullets: [
-      "Designed and implemented RESTful APIs for hotel booking, search, and cancellations with efficient MongoDB schema design",
-      "Built real-time syncing with WebSockets to ensure up-to-date booking availability and prevent double bookings",
-      "Implemented secure authentication (JWT, refresh tokens, role-based access) with single-device login enforcement",
-      "Applied comprehensive security practices including rate limiting, input validation, and HTTPS to protect the platform",
+      "Designed RESTful APIs for hotel booking with MongoDB indexing",
+      "Implemented real-time booking sync using WebSockets",
+      "Built secure JWT-based authentication with role-based access",
     ],
+    impact:
+      "Ensured accurate booking availability and strengthened system security",
   },
 ];
 
