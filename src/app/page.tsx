@@ -140,7 +140,6 @@ export default function Home() {
         "Built real-time syncing with WebSockets to ensure up-to-date booking availability and prevent double bookings",
         "Implemented secure authentication (JWT, refresh tokens, role-based access) with single-device login enforcement",
         "Applied comprehensive security practices including rate limiting, input validation, and HTTPS to protect the platform",
-        "Delivered the project 2 weeks ahead of schedule while maintaining high code quality and test coverage",
       ],
     },
   ];
@@ -176,18 +175,16 @@ export default function Home() {
             <div className="flex items-center justify-between">
               <div className="text-2xl font-bold text-slate-900">Kabby</div>
               <div className="hidden md:flex space-x-8">
-                {["Projects", "About", "Skills", "Experience", "Contact"].map(
-                  (item) => (
-                    <motion.a
-                      key={item}
-                      href={`#${item.toLowerCase()}`}
-                      className="text-slate-600 hover:text-slate-900 transition-colors duration-300"
-                      whileHover={{ y: -2 }}
-                    >
-                      {item}
-                    </motion.a>
-                  )
-                )}
+                {["Projects", "About", "Skills", "Experience"].map((item) => (
+                  <motion.a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    className="text-slate-600 hover:text-slate-900 transition-colors duration-300"
+                    whileHover={{ y: -2 }}
+                  >
+                    {item}
+                  </motion.a>
+                ))}
               </div>
             </div>
           </div>
@@ -391,12 +388,12 @@ export default function Home() {
                 className="text-base text-justify space-y-4 hyphens-auto"
               >
                 <p>
-                  I’m Kabiru Akeem, a Frontend Engineer who cares about clarity,
-                  scalability, and long-term impact. I approach system design
-                  with an eye for trade-offs, making informed decisions that
-                  balance performance, usability, and maintainability. For me,
-                  writing code is only part of the job, the bigger challenge is
-                  designing systems that evolve gracefully and guiding teams
+                  I&apos;m Kabiru Akeem, a Frontend Engineer who cares about
+                  clarity, scalability, and long-term impact. I approach system
+                  design with an eye for trade-offs, making informed decisions
+                  that balance performance, usability, and maintainability. For
+                  me, writing code is only part of the job, the bigger challenge
+                  is designing systems that evolve gracefully and guiding teams
                   toward shared technical standards.
                 </p>
                 <p>
@@ -517,29 +514,17 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contact" className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
-            <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Contact
-              </h2>
-            </motion.div>
-
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div>
               {/* Contact Info */}
               <motion.div
-                className="space-y-6"
+                className="flex items-center justify-center"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
                 {/* Contact Methods */}
-                <div className="space-y-6">
+                <div className="flex items-center gap-4">
                   {[
                     {
                       icon: (
@@ -589,36 +574,41 @@ export default function Home() {
                       value: "github.com/akeemkabiru",
                       href: "https://github.com/akeemkabiru",
                     },
+                    {
+                      icon: (
+                        <svg
+                          className="w-6 h-6"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M18.244 2.25H21.532L14.14 10.69L22.75 21.75H15.93L10.872 15.36L5.056 21.75H1.766L9.704 12.72L1.5 2.25H8.478L13.06 8.13L18.244 2.25ZM17.048 19.95H18.916L7.58 4.05H5.582L17.048 19.95Z" />
+                        </svg>
+                      ),
+                      label: "X (Twitter)",
+                      value: "twitter.com/akemkabiru",
+                      href: "https://twitter.com/akemkabiru",
+                    },
                   ].map((contact, index) => (
                     <motion.a
                       key={index}
                       href={contact.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center p-4 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-all duration-300"
                       whileHover={{ scale: 1.02, y: -2 }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                     >
-                      <div className="flex-shrink-0 w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600">
+                      <div className="flex-shrink-0 w-10 h-10 bg-slate-200 rounded-lg flex items-center justify-center text-slate-600">
                         {contact.icon}
-                      </div>
-                      <div className="ml-4">
-                        <div className="text-slate-900 font-medium">
-                          {contact.label}
-                        </div>
-                        <div className="text-slate-600 text-sm">
-                          {contact.value}
-                        </div>
                       </div>
                     </motion.a>
                   ))}
                 </div>
               </motion.div>
 
-              {/* Contact Form */}
+              {/* Contact Form
               <motion.div
                 className="bg-white border border-gray-200 rounded-lg p-6"
                 initial={{ opacity: 0, x: 20 }}
@@ -681,7 +671,7 @@ export default function Home() {
                     Send Message
                   </motion.button>
                 </form>
-              </motion.div>
+              </motion.div> */}
             </div>
 
             {/* Footer */}
