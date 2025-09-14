@@ -140,7 +140,6 @@ export default function Home() {
         "Built real-time syncing with WebSockets to ensure up-to-date booking availability and prevent double bookings",
         "Implemented secure authentication (JWT, refresh tokens, role-based access) with single-device login enforcement",
         "Applied comprehensive security practices including rate limiting, input validation, and HTTPS to protect the platform",
-        "Delivered the project 2 weeks ahead of schedule while maintaining high code quality and test coverage",
       ],
     },
   ];
@@ -164,7 +163,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="min-h-screen  text-gray-900 font-sans text-sm">
+      <main className="min-h-screen  text-gray-900 font-sans text-sm ">
         {/* Navigation */}
         <motion.nav
           className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200"
@@ -174,11 +173,9 @@ export default function Home() {
         >
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
-              <div className="text-2xl font-bold text-slate-900">
-                Kabiru Akeem
-              </div>
+              <div className="text-2xl font-bold text-slate-900">Kabby</div>
               <div className="hidden md:flex space-x-8">
-                {["Projects", "Skills", "Experience", "Contact"].map((item) => (
+                {["Projects", "About", "Skills", "Experience"].map((item) => (
                   <motion.a
                     key={item}
                     href={`#${item.toLowerCase()}`}
@@ -212,9 +209,8 @@ export default function Home() {
               className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed"
               variants={staggerItem}
             >
-              Frontend Engineer delivering performant web applications.
-              Experienced in architecting complex interfaces and integrating
-              real-time data systems with React, Next.js, and TypeScript.
+              I design and deliver high-performance applications that transform
+              data into intuitive, reliable user experiences.
             </motion.p>
 
             <motion.div
@@ -227,7 +223,7 @@ export default function Home() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                View Projects
+                Explore Projects
               </motion.a>
 
               <motion.a
@@ -236,7 +232,7 @@ export default function Home() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Download CV
+                Resume
               </motion.a>
             </motion.div>
           </div>
@@ -255,10 +251,6 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                 Projects
               </h2>
-              <p className="text-slate-600 max-w-2xl mx-auto">
-                Recent work showcasing technical expertise and problem-solving
-                approach.
-              </p>
             </motion.div>
 
             <div className="grid gap-8 lg:grid-cols-3">
@@ -364,6 +356,54 @@ export default function Home() {
                 </svg>
               </motion.a>
             </motion.div>
+          </div>
+        </section>
+
+        {/* About */}
+        <section id="about" className="py-16 px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">About</h2>
+            </motion.div>
+            <div className="flex lg:flex-row flex-col items-center lg:items-start gap-8 bg-white p-6 rounded-lg">
+              <Image
+                src="/kabby.jpeg"
+                alt=""
+                width={300}
+                height={300}
+                className="rounded-md"
+              />
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-base text-justify space-y-4 hyphens-auto"
+              >
+                <p>
+                  I&apos;m Kabiru Akeem, a Frontend Engineer who cares about
+                  clarity, scalability, and long-term impact. I approach system
+                  design with an eye for trade-offs, making informed decisions
+                  that balance performance, usability, and maintainability. For
+                  me, writing code is only part of the job, the bigger challenge
+                  is designing systems that evolve gracefully and guiding teams
+                  toward shared technical standards.
+                </p>
+                <p>
+                  I believe great engineering comes from collaboration as much
+                  as technical skill. I work closely with product and backend
+                  teams to ensure the frontend is not just functional but
+                  aligned with the bigger picture.
+                </p>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -474,41 +514,17 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contact" className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
-            <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Contact
-              </h2>
-              <p className="text-slate-600">
-                Get in touch for opportunities or collaboration.
-              </p>
-            </motion.div>
-
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div>
               {/* Contact Info */}
               <motion.div
-                className="space-y-6"
+                className="flex items-center justify-center"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                    Get in Touch
-                  </h3>
-                  <p className="text-slate-600 mb-6">
-                    Available for new opportunities and interesting projects.
-                  </p>
-                </div>
-
                 {/* Contact Methods */}
-                <div className="space-y-6">
+                <div className="flex items-center gap-4">
                   {[
                     {
                       icon: (
@@ -558,36 +574,41 @@ export default function Home() {
                       value: "github.com/akeemkabiru",
                       href: "https://github.com/akeemkabiru",
                     },
+                    {
+                      icon: (
+                        <svg
+                          className="w-6 h-6"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M18.244 2.25H21.532L14.14 10.69L22.75 21.75H15.93L10.872 15.36L5.056 21.75H1.766L9.704 12.72L1.5 2.25H8.478L13.06 8.13L18.244 2.25ZM17.048 19.95H18.916L7.58 4.05H5.582L17.048 19.95Z" />
+                        </svg>
+                      ),
+                      label: "X (Twitter)",
+                      value: "twitter.com/akemkabiru",
+                      href: "https://twitter.com/akemkabiru",
+                    },
                   ].map((contact, index) => (
                     <motion.a
                       key={index}
                       href={contact.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center p-4 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-all duration-300"
                       whileHover={{ scale: 1.02, y: -2 }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                     >
-                      <div className="flex-shrink-0 w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600">
+                      <div className="flex-shrink-0 w-10 h-10 bg-slate-200 rounded-lg flex items-center justify-center text-slate-600">
                         {contact.icon}
-                      </div>
-                      <div className="ml-4">
-                        <div className="text-slate-900 font-medium">
-                          {contact.label}
-                        </div>
-                        <div className="text-slate-600 text-sm">
-                          {contact.value}
-                        </div>
                       </div>
                     </motion.a>
                   ))}
                 </div>
               </motion.div>
 
-              {/* Contact Form */}
+              {/* Contact Form
               <motion.div
                 className="bg-white border border-gray-200 rounded-lg p-6"
                 initial={{ opacity: 0, x: 20 }}
@@ -650,7 +671,7 @@ export default function Home() {
                     Send Message
                   </motion.button>
                 </form>
-              </motion.div>
+              </motion.div> */}
             </div>
 
             {/* Footer */}
@@ -661,7 +682,9 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-slate-500 text-sm">© 2024 Kabiru Akeem</p>
+              <p className="text-slate-500 text-sm">
+                &copy; {new Date().getFullYear()} Kabiru Akeem
+              </p>
             </motion.div>
           </div>
         </section>
