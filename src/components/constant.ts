@@ -4,7 +4,7 @@ export const projects = [
     description:
       "Helps users rephrase, summarize, or expand text with a simple editor interface powered by free AI APIs.",
     tags: ["Next.js", "TypeScript", "Tailwind", "OpenAI API (free tier)"],
-    live: "#",
+    live: "https://ai-witing-assistant.vercel.app",
     code: "#",
     image: "/ai.jpg",
   },
